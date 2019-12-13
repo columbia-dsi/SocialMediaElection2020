@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Interactive Components | Understanding 2020 Presidential Polls from Social Media Perspective</title>
+  <meta name="description" content="Chapter 6 Interactive Components | Understanding 2020 Presidential Polls from Social Media Perspective" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Interactive Components | Understanding 2020 Presidential Polls from Social Media Perspective" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Interactive Components | Understanding 2020 Presidential Polls from Social Media Perspective" />
+  
+  
+  
+
+<meta name="author" content="Kevin Gao (wg2311), Haibo Yu (hy2628)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="results.html"/>
+<link rel="next" href="conclusion.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Social Media Election 2020</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#background"><i class="fa fa-check"></i><b>1.1</b> Background</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#trends"><i class="fa fa-check"></i><b>1.2</b> Trends</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#project"><i class="fa fa-check"></i><b>1.3</b> Project</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#the-team"><i class="fa fa-check"></i><b>1.3.1</b> The Team</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#the-plan"><i class="fa fa-check"></i><b>1.3.2</b> The Plan</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#the-questions"><i class="fa fa-check"></i><b>1.3.3</b> The Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.4</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtube"><i class="fa fa-check"></i><b>2.1</b> Youtube</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#videos"><i class="fa fa-check"></i><b>2.1.1</b> Videos</a></li>
+<li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#comments"><i class="fa fa-check"></i><b>2.1.2</b> Comments</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="data-sources.html"><a href="data-sources.html#tweets"><i class="fa fa-check"></i><b>2.2.1</b> Tweets</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data-sources.html"><a href="data-sources.html#posts"><i class="fa fa-check"></i><b>2.3.1</b> Posts</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#apis"><i class="fa fa-check"></i><b>2.4</b> APIs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-pattern-detection"><i class="fa fa-check"></i><b>4.1</b> Missing Pattern Detection</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#missing-data-solution"><i class="fa fa-check"></i><b>4.2</b> Missing Data Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#youtube-1"><i class="fa fa-check"></i><b>5.1</b> Youtube</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#initial-investigation"><i class="fa fa-check"></i><b>5.1.1</b> Initial Investigation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#topic-analysis"><i class="fa fa-check"></i><b>5.1.2</b> Topic Analysis</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#popularity-analysis"><i class="fa fa-check"></i><b>5.1.3</b> Popularity Analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="results.html"><a href="results.html#comment-analysis"><i class="fa fa-check"></i><b>5.1.4</b> Comment Analysis</a></li>
+<li class="chapter" data-level="5.1.5" data-path="results.html"><a href="results.html#demographics"><i class="fa fa-check"></i><b>5.1.5</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#twitter-1"><i class="fa fa-check"></i><b>5.2</b> Twitter</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#tweet-analysis"><i class="fa fa-check"></i><b>5.2.1</b> Tweet Analysis</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#demographics-1"><i class="fa fa-check"></i><b>5.2.2</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#facebook-1"><i class="fa fa-check"></i><b>5.3</b> Facebook</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="results.html"><a href="results.html#post-analysis"><i class="fa fa-check"></i><b>5.3.1</b> Post Analysis</a></li>
+<li class="chapter" data-level="5.3.2" data-path="results.html"><a href="results.html#demographics-2"><i class="fa fa-check"></i><b>5.3.2</b> Demographics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interactive-components.html"><a href="interactive-components.html"><i class="fa fa-check"></i><b>6</b> Interactive Components</a><ul>
+<li class="chapter" data-level="6.1" data-path="interactive-components.html"><a href="interactive-components.html#interactive-choropleth-maps-r-component"><i class="fa fa-check"></i><b>6.1</b> Interactive Choropleth Maps (R Component)</a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-components.html"><a href="interactive-components.html#interactive-social-media-demographics-html-component"><i class="fa fa-check"></i><b>6.2</b> Interactive Social Media Demographics (Html Component)</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="interactive-components.html"><a href="interactive-components.html#social-media-use-over-time"><i class="fa fa-check"></i><b>6.2.1</b> Social media use over time</a></li>
+<li class="chapter" data-level="6.2.2" data-path="interactive-components.html"><a href="interactive-components.html#who-uses-social-media"><i class="fa fa-check"></i><b>6.2.2</b> Who uses social media</a></li>
+<li class="chapter" data-level="6.2.3" data-path="interactive-components.html"><a href="interactive-components.html#which-social-media-platforms-are-most-popular"><i class="fa fa-check"></i><b>6.2.3</b> Which social media platforms are most popular</a></li>
+<li class="chapter" data-level="6.2.4" data-path="interactive-components.html"><a href="interactive-components.html#how-often-americans-use-social-media-sites"><i class="fa fa-check"></i><b>6.2.4</b> How often Americans use social media sites</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Understanding 2020 Presidential Polls from Social Media Perspective</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interactive-components" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Interactive Components</h1>
+<div id="interactive-choropleth-maps-r-component" class="section level2">
+<h2><span class="header-section-number">6.1</span> Interactive Choropleth Maps (R Component)</h2>
+<ul>
+<li>Here are core plots for our study to show which candidate in which state are actually more popular online, based on video viewers’ likes and dislikes aggragation, so we decided to make it interactive for the users:</li>
+</ul>
+</div>
+<div id="interactive-social-media-demographics-html-component" class="section level2">
+<h2><span class="header-section-number">6.2</span> Interactive Social Media Demographics (Html Component)</h2>
+<p>(credit: Pew Research Center)</p>
+<div id="social-media-use-over-time" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Social media use over time</h3>
+<iframe src="https://www.pewresearch.org/internet/chart/social-media-use/iframe/" id="pew17380" scrolling="no" width="100%" height="100px" frameborder="0">
+</iframe>
+<script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17380')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
+</div>
+<div id="who-uses-social-media" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Who uses social media</h3>
+<iframe src="https://www.pewresearch.org/internet/chart/social-media-use-by-community-type/iframe/" id="pew17895" scrolling="no" width="100%" height="100px" frameborder="0">
+</iframe>
+<script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17895')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
+</div>
+<div id="which-social-media-platforms-are-most-popular" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Which social media platforms are most popular</h3>
+<iframe src="https://www.pewresearch.org/internet/chart/which-social-media-platforms-are-most-popular/iframe/" id="pew17383" scrolling="no" width="100%" height="100px" frameborder="0">
+</iframe>
+<script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17383')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
+</div>
+<div id="how-often-americans-use-social-media-sites" class="section level3">
+<h3><span class="header-section-number">6.2.4</span> How often Americans use social media sites</h3>
+<iframe src="https://www.pewresearch.org/internet/chart/how-often-americans-are-using-social-media/iframe/" id="pew17381" scrolling="no" width="100%" height="100px" frameborder="0">
+</iframe>
+<script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17381')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
+<p><a href="https://github.com/columbia-dsi/SocialMediaElection2020"><img src="imgs/GitHub.png" alt="Github" /></a></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="results.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/columbia-dsi/SocialMediaElection2020/edit/master/06-interactive.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/columbia-dsi/SocialMediaElection2020/blob/master/06-interactive.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

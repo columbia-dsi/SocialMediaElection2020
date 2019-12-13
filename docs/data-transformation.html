@@ -24,7 +24,6 @@
 <meta name="author" content="Kevin Gao (wg2311), Haibo Yu (hy2628)" />
 
 
-<meta name="date" content="2019-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +49,13 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -142,17 +148,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.4</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtbe"><i class="fa fa-check"></i><b>2.1</b> Youtbe</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#video"><i class="fa fa-check"></i><b>2.1.1</b> Video</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtube"><i class="fa fa-check"></i><b>2.1</b> Youtube</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#videos"><i class="fa fa-check"></i><b>2.1.1</b> Videos</a></li>
 <li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#comments"><i class="fa fa-check"></i><b>2.1.2</b> Comments</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="data-sources.html"><a href="data-sources.html#tweets"><i class="fa fa-check"></i><b>2.2.1</b> Tweets</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data-sources.html"><a href="data-sources.html#posts"><i class="fa fa-check"></i><b>2.3.1</b> Posts</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#apis"><i class="fa fa-check"></i><b>2.4</b> APIs</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-pattern-detection"><i class="fa fa-check"></i><b>4.1</b> Missing Pattern Detection</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#missing-data-solution"><i class="fa fa-check"></i><b>4.2</b> Missing Data Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#youtube-1"><i class="fa fa-check"></i><b>5.1</b> Youtube</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#initial-investigation"><i class="fa fa-check"></i><b>5.1.1</b> Initial Investigation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#topic-analysis"><i class="fa fa-check"></i><b>5.1.2</b> Topic Analysis</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#popularity-analysis"><i class="fa fa-check"></i><b>5.1.3</b> Popularity Analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="results.html"><a href="results.html#comment-analysis"><i class="fa fa-check"></i><b>5.1.4</b> Comment Analysis</a></li>
+<li class="chapter" data-level="5.1.5" data-path="results.html"><a href="results.html#demographics"><i class="fa fa-check"></i><b>5.1.5</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#twitter-1"><i class="fa fa-check"></i><b>5.2</b> Twitter</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#tweet-analysis"><i class="fa fa-check"></i><b>5.2.1</b> Tweet Analysis</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#demographics-1"><i class="fa fa-check"></i><b>5.2.2</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#facebook-1"><i class="fa fa-check"></i><b>5.3</b> Facebook</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="results.html"><a href="results.html#post-analysis"><i class="fa fa-check"></i><b>5.3.1</b> Post Analysis</a></li>
+<li class="chapter" data-level="5.3.2" data-path="results.html"><a href="results.html#demographics-2"><i class="fa fa-check"></i><b>5.3.2</b> Demographics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interactive-components.html"><a href="interactive-components.html"><i class="fa fa-check"></i><b>6</b> Interactive Components</a><ul>
+<li class="chapter" data-level="6.1" data-path="interactive-components.html"><a href="interactive-components.html#interactive-choropleth-maps-r-component"><i class="fa fa-check"></i><b>6.1</b> Interactive Choropleth Maps (R Component)</a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-components.html"><a href="interactive-components.html#interactive-social-media-demographics-html-component"><i class="fa fa-check"></i><b>6.2</b> Interactive Social Media Demographics (Html Component)</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="interactive-components.html"><a href="interactive-components.html#social-media-use-over-time"><i class="fa fa-check"></i><b>6.2.1</b> Social media use over time</a></li>
+<li class="chapter" data-level="6.2.2" data-path="interactive-components.html"><a href="interactive-components.html#who-uses-social-media"><i class="fa fa-check"></i><b>6.2.2</b> Who uses social media</a></li>
+<li class="chapter" data-level="6.2.3" data-path="interactive-components.html"><a href="interactive-components.html#which-social-media-platforms-are-most-popular"><i class="fa fa-check"></i><b>6.2.3</b> Which social media platforms are most popular</a></li>
+<li class="chapter" data-level="6.2.4" data-path="interactive-components.html"><a href="interactive-components.html#how-often-americans-use-social-media-sites"><i class="fa fa-check"></i><b>6.2.4</b> How often Americans use social media sites</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -175,6 +213,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="data-transformation" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Data transformation</h1>
+<p>When we intially pulled youtube data, we did several plots and observed some inconsistent pattern with online 2020 presidential polls, so we digged into the result csvs and started to investigate what has been misaligned in the youtube original data.</p>
+<p>After random checks based on URLs, we first noticed some weirds characters in csv, like extrac title columns added due to the pulling code re-schedule, we can easily manually cleaned up those.</p>
+<p>Then we noticed some misformatted and duplicate columns during checking after polling scripts, this is due to the API failture and re-tries, we cleand it up in python script (duplicate entires), and R script (date time formats).</p>
+<p>Then we noticed some of the candidates have extremely unlikely total views from the aggregation level data, so we sorted the videos based on their views, and picked the top ones to eyespot check, then we found some videos that belonged to everyone, which was not specifically related to one candidate (Examples: “2020 Democratic Debate - SNL”, “DNC Town Hall - SNL”,“2020 November Democratic Debate in Atlanta | The Daily Show”,“2020 October Democratic Debate in Ohio | The Daily Show”…etc). After we filtered them out later in R data frame, our plots looked better.</p>
+<p>We alos filtered out Mr.“Donald Trump”, since he is not one of the democratic candidates, who are related to the ongoing DNC election right now.</p>
+<p>And here is the summary of video data per candidate after the cleaning:</p>
+<pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Sanders      Cory Booker 
+##             4788             4800             4885             4777 
+##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
+##                0             4737             4756             4945 
+##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
+##             4742             4048             4796</code></pre>
+<p>Now we can see the 10 randomly selected sample entires from our video data:
+<div id="htmlwidget-36e504570e32af3e9303" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-36e504570e32af3e9303">{"x":{"visdat":{"53aca6d5973":["function () ","plotlyVisDat"]},"cur_data":"53aca6d5973","attrs":{"53aca6d5973":{"columnwidth":[80,80,100,150,50,50,400],"header":{"values":["Youtbe Video","candidate","state","title","like","dislike","url"],"align":["left","center","center","center","center","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Andrew Yang","Pete Buttigieg","Andrew Yang","Tulsi Gabbard","Cory Booker","Elizabeth Warren","Andrew Yang","Bernie Sanders","Joe Biden","Andrew Yang"],["New Jersey","New Mexico","Alabama","Michigan","Illinois","West Virginia","Kansas","Texas","Florida","Mississippi"],["Andrew Yang to Putin - I'm Sorry I Beat Your Guy","Pete Buttigieg confronted by protesters in South Bend, Indiana","Andrew Yang - Weekly Recap 11/24/19","Joe Rogan Experience #1295 - Tulsi Gabbard","Cory Booker joins growing field of 2020 Democratic candidates","Sen. Elizabeth Warren speaks after explosions in Merrimack Valley","Andrew Yang on Useful Idiots, Interview Only","Joe Rogan Experience #1330 - Bernie Sanders","Vice President Joe Biden speaks on the issues","VÃ­deo-GuÃ­a de Votantes AARP: Andrew Yang"],["  1863","   878","  2139"," 61458","    27","     5","  8438","364956","     0","    67"],["   43"," 1228","    9"," 6217","   41","    9","  222","42184","    0","    0"],["https://www.youtube.com/watch?v=gW23Ymw6o2M","https://www.youtube.com/watch?v=YGPcq711wjU","https://www.youtube.com/watch?v=D20VelZgbh4","https://www.youtube.com/watch?v=kR8UcnwLH24","https://www.youtube.com/watch?v=OoQ5O2cAg7Y","https://www.youtube.com/watch?v=yCVZbbtqqZs","https://www.youtube.com/watch?v=iKuZppYwnq4","https://www.youtube.com/watch?v=2O-iLk1G_ng","https://www.youtube.com/watch?v=mrKl6_I1NBU","https://www.youtube.com/watch?v=64LPULDnxLI"]],"align":["left","center","center","center","center","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"table"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"columnwidth":[80,80,100,150,50,50,400],"header":{"values":["Youtbe Video","candidate","state","title","like","dislike","url"],"align":["left","center","center","center","center","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Andrew Yang","Pete Buttigieg","Andrew Yang","Tulsi Gabbard","Cory Booker","Elizabeth Warren","Andrew Yang","Bernie Sanders","Joe Biden","Andrew Yang"],["New Jersey","New Mexico","Alabama","Michigan","Illinois","West Virginia","Kansas","Texas","Florida","Mississippi"],["Andrew Yang to Putin - I'm Sorry I Beat Your Guy","Pete Buttigieg confronted by protesters in South Bend, Indiana","Andrew Yang - Weekly Recap 11/24/19","Joe Rogan Experience #1295 - Tulsi Gabbard","Cory Booker joins growing field of 2020 Democratic candidates","Sen. Elizabeth Warren speaks after explosions in Merrimack Valley","Andrew Yang on Useful Idiots, Interview Only","Joe Rogan Experience #1330 - Bernie Sanders","Vice President Joe Biden speaks on the issues","VÃ­deo-GuÃ­a de Votantes AARP: Andrew Yang"],["  1863","   878","  2139"," 61458","    27","     5","  8438","364956","     0","    67"],["   43"," 1228","    9"," 6217","   41","    9","  222","42184","    0","    0"],["https://www.youtube.com/watch?v=gW23Ymw6o2M","https://www.youtube.com/watch?v=YGPcq711wjU","https://www.youtube.com/watch?v=D20VelZgbh4","https://www.youtube.com/watch?v=kR8UcnwLH24","https://www.youtube.com/watch?v=OoQ5O2cAg7Y","https://www.youtube.com/watch?v=yCVZbbtqqZs","https://www.youtube.com/watch?v=iKuZppYwnq4","https://www.youtube.com/watch?v=2O-iLk1G_ng","https://www.youtube.com/watch?v=mrKl6_I1NBU","https://www.youtube.com/watch?v=64LPULDnxLI"]],"align":["left","center","center","center","center","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"type":"table","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
+<p>Now can continue to aggregate the data, i.e. sum the total video videws group by candidate to see in general who is mostly being watched in youtube online:
+<div id="htmlwidget-2ea426c5c01a497522a3" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2ea426c5c01a497522a3">{"x":{"visdat":{"53ac3cd64943":["function () ","plotlyVisDat"]},"cur_data":"53ac3cd64943","attrs":{"53ac3cd64943":{"header":{"values":["Youtbe Video","candidate","view"],"align":["left","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Amy Klobuchar","Andrew Yang","Bernie Sanders","Cory Booker","Elizabeth Warren","Joe Biden","Kamala Harris","Pete Buttigieg","Tom Steyer","Tulsi Gabbard"],["28541008","29957784","29512085","29862035","29244648","28804908","31126164","29524182","25762042","29403389"]],"align":["left","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"table"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"header":{"values":["Youtbe Video","candidate","view"],"align":["left","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Amy Klobuchar","Andrew Yang","Bernie Sanders","Cory Booker","Elizabeth Warren","Joe Biden","Kamala Harris","Pete Buttigieg","Tom Steyer","Tulsi Gabbard"],["28541008","29957784","29512085","29862035","29244648","28804908","31126164","29524182","25762042","29403389"]],"align":["left","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"type":"table","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
+<p><a href="https://github.com/columbia-dsi/SocialMediaElection2020"><img src="imgs/GitHub.png" alt="Github" /></a></p>
 
 </div>
             </section>

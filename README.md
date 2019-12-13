@@ -32,14 +32,6 @@ TEST.
 
 (You will need to repeat steps 2 and 4 every time you wish to update the book online.)
 
-### Set up your own GitHub Pages
-
-- 1. On the home page of your repo, click Settings. Scroll down to the GitHub pages section and change **Source** to **master branch /docs folder**.  Above the **Source** line, a bar will appear with your book's URL. The bar will initially be blue and indicate that your book is *ready* to be published and will change to green once it is published. Copy the URL. (Note that sometimes there is a delay until your book actually appears at that URL. If it doesn't appear after a few minutes, try making a small change locally, rendering the book, and pushing the changes to trigger a deploy.)
-
-- 2. Click the edit button on the top of the home page of the repo and paste your book URL into the **Website** field that appears on the right.
-
-For additional features, consult the official guide to **bookdown**: https://bookdown.org/yihui/bookdown
-
 
 ### Credits
 

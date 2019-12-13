@@ -1,7 +1,7 @@
 --- 
 title: "Understanding 2020 Presidential Polls from Social Media Perspective"
 author: "Kevin Gao (wg2311), Haibo Yu (hy2628)"
-date: "`r Sys.Date()`"
+date:  "`r format(Sys.Date(), '%B, %Y')`"
 site: bookdown::bookdown_site
 ---
 
@@ -15,11 +15,11 @@ Every once a while, the election will impact the U.S. in many aspects, such as j
 
 Foundamentaly, today's democracy allow every citizen can vote and every vote count as one.
 
-![Vote American](imgs/vote.png)
+![Vote America - Credit: Bing Images](imgs/vote.png)
 
 However, does every individual knows enough about the candidates that they have to choose from?
 
-![Candidats](imgs/candidates.jpg)
+![Candidats - Credit: Bing Images](imgs/candidates.jpg)
 
 
 
@@ -47,6 +47,7 @@ With the concerns of all those mysterious, we start a study using social media d
 We use social media like youtube, twitter, facebook to address the impact of social media in the 2020 United States presidential election.
 
 
+![Social Media Election - Credit: Bing Images](imgs/social-media-presidential-election.png)
 
 ## Project
 
@@ -66,7 +67,7 @@ Haibo:
 Kevin: 
 1. Data pipeline: Design, and architect the data flow and project details.
 2. Data analysis: Data exploration and visualization
-3. Data prediction*: Apply machine learning, NLP, GLM to make predictions of our data.
+3. Data prediction*: Apply machine learning, NLP, GLM to make predictions of our data (According to the final project instruction for EDAV, we have to restrict ourselves to exploratory techniques,rather than modeling / prediction approaches).
 
 
 ### The Questions
@@ -98,5 +99,10 @@ f) Is our result correlating to the final election result in December ?
  
  - [2] Endres, Warnick (2004). "Text-based Interactivity in Candidate Campaign Web Sites: A case Study from the 2002 Elections". Western Journal of Communication. 68 (3): 322–42. doi:10.1080/10570310409374804.
  Smith, Aaron. "Pew Internet & American Life Project". The Internet and Campaign 2010. Pew Research Center.
- 
+
+
+
+
+
+[![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)
 
