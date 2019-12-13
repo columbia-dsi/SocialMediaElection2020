@@ -1,2 +1,74 @@
 # Data sources
 
+We conduct study around 3 social meida platform: Youtube, Twiter, Facebook.
+Our data source is original, collected from social meida networks, including youtube, facebook, twitter.
+
+Methodology: We wrote a python script (web crawler) to do the web scraping work to collect data.
+
+Obstacle: There certainly many obstacles in a project, however, here is an interesting one, when we were scraping search result data from youtube for each candidate, we faced with obstacles when grabing the full data from the lazy loading result page, which would hide large content and load those later by user scrolling down to the bottom of the page, this actually prevented us to rely on the initial html dom to scrap the full data. And it's hard to use web scrawler in python to control the lazy loading behavior.
+
+Solution: After serveral attempts, we have resolved this by using a walk-around solution provided in youtube search feature, by adding a paramter '&page=N' (N is the number you would like to paginate) to laod all search result at once, then we can scrap the data page by page.
+
+
+## Youtbe
+
+We use a python script to scape the data, generated csvs and details listed below:
+
+### Video
+
+```{r}
+
+df <- read.csv("data/2019-12-12.csv")
+
+head(df)
+
+summary(df$candidate)
+
+```
+
+### Comments
+
+```{r}
+
+df <- read.csv("data/2019-12-12_comment.csv")
+
+head(df)
+
+summary(df$candidate)
+
+```
+
+## Twitter
+
+We use a python script to scape the data, generated csvs and details listed below:
+
+```{r}
+
+df <- read.csv("data/twitter_tweet.csv")
+
+head(df)
+
+summary(df$candidate)
+
+```
+
+
+
+## Facebook
+
+We use a python script to scape the data, generated csvs and details listed below:
+
+
+```{r}
+
+df <- read.csv("data/facebook_post.csv")
+
+head(df)
+
+summary(df$candidate)
+
+```
+
+
+
+
