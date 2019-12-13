@@ -52,6 +52,68 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -79,7 +141,14 @@
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.4</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a></li>
+<li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtbe"><i class="fa fa-check"></i><b>2.1</b> Youtbe</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#video"><i class="fa fa-check"></i><b>2.1.1</b> Video</a></li>
+<li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#comments"><i class="fa fa-check"></i><b>2.1.2</b> Comments</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
@@ -106,8 +175,161 @@
             <section class="normal" id="section-">
 <div id="data-sources" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Data sources</h1>
-<p>We conduct study around 3 social meida platform: Youtube, Twiter, Facebook.</p>
+<p>We conduct study around 3 social meida platform: Youtube, Twiter, Facebook.
+Our data source is original, collected from social meida networks, including youtube, facebook, twitter.</p>
+<p>Methodology: We wrote a python script (web crawler) to do the web scraping work to collect data.</p>
+<p>Obstacle: There certainly many obstacles in a project, however, here is an interesting one, when we were scraping search result data from youtube for each candidate, we faced with obstacles when grabing the full data from the lazy loading result page, which would hide large content and load those later by user scrolling down to the bottom of the page, this actually prevented us to rely on the initial html dom to scrap the full data. And it’s hard to use web scrawler in python to control the lazy loading behavior.</p>
+<p>Solution: After serveral attempts, we have resolved this by using a walk-around solution provided in youtube search feature, by adding a paramter ‘&amp;page=N’ (N is the number you would like to paginate) to laod all search result at once, then we can scrap the data page by page.</p>
+<div id="youtbe" class="section level2">
+<h2><span class="header-section-number">2.1</span> Youtbe</h2>
+<p>We use a python script to scape the data, generated csvs and details listed below:</p>
+<div id="video" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Video</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/2019-12-12.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb1-2" title="2"></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
+<pre><code>##   index    candidate   state
+## 1     0 Donald Trump Alabama
+## 2     1 Donald Trump Alabama
+## 3     2 Donald Trump Alabama
+## 4     3 Donald Trump Alabama
+## 5     4 Donald Trump Alabama
+## 6     5 Donald Trump Alabama
+##                                                                              title
+## 1                      President Trump, Melania Trump Attend Alabama Football Game
+## 2              Trump Keeps Lying About Hurricane Dorian and Alabama: A Closer Look
+## 3                                   Donald Trump given huge ovation at Alabama/LSU
+## 4   Donald Trump displays Hurricane Dorian map apparently doctored with marker pen
+## 5 Why Is President Donald Trump Still Fixated On Alabama? | Velshi &amp; Ruhle | MSNBC
+## 6                               Baby Trump comes to Tuscaloosa for Alabama vs. LSU
+##                            media      view     time
+## 1                       VOA News   269,941 11/10/19
+## 2    Late Night with Seth Meyers 3,538,632   9/6/19
+## 3 Alabama Crimson Tide on AL.com   194,856  11/9/19
+## 4                  Guardian News   151,199   9/5/19
+## 5                          MSNBC    62,441   9/6/19
+## 6                         AL.com   128,608  11/9/19
+##                                                                                                                           description
+## 1            President Donald Trump and first lady Melania Trump attended an American football game in Alabama, Saturday, November 9.
+## 2  Seth takes a closer look at President Trump defending his doctored map showing Hurricane Dorian hitting Alabama. Â» SubscribeÂ ...
+## 3           President Donald Trump and First Lady Melania are given a standing ovation when announced at the Alabama/ LSU game in ...
+## 4 Donald Trump has caused uproar on social media after displaying a map of Hurricane Dorian&#39;s path featuring an extra loop drawnÂ ...
+## 5       President Trump won&#39;t back down from his claim that Hurricane Dorian was going to hit Alabama. Washington Post PoliticalÂ ...
+## 6        Protesters set up a giant &quot;baby Trump&quot; balloon in Monnish Park in Tuscaloosa, as the President is set to arrive for theÂ ...
+##    like dislike comment.count favorite
+## 1  3187    1732          5079        0
+## 2 41685    2935          7545        0
+## 3  1965     412          1388        0
+## 4   309      91           349        0
+## 5   415     709          1304        0
+## 6  1709    2099          2742        0
+##                                           url
+## 1 https://www.youtube.com/watch?v=gnn11RNVfvs
+## 2 https://www.youtube.com/watch?v=6n7QA0Gr_oQ
+## 3 https://www.youtube.com/watch?v=LS2Lcz-pTLM
+## 4 https://www.youtube.com/watch?v=7kew_ZYnUyg
+## 5 https://www.youtube.com/watch?v=VWjSC77BEgQ
+## 6 https://www.youtube.com/watch?v=IKv3pEy0ln4</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
+<pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Sanders      Cory Booker 
+##             4800             4824             4888             4788 
+##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
+##             4761             4745             4768             4960 
+##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
+##             4759             4095             4808</code></pre>
+</div>
+<div id="comments" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Comments</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/2019-12-12_comment.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
+<pre><code>##   index    candidate                                         url
+## 1     0 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
+## 2     1 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
+## 3     2 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
+## 4     3 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
+## 5     4 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
+## 6     5 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
+##                                                                                             comment
+## 1                                                                  and Epstein didn&#39;t kill himself!
+## 2                                There&#39;s a lot of butt hurt leftists in these comments, bretty gud.
+## 3                                                          They&#39;re still crying over here in NY lol
+## 4                                                       A roaring ovation. Wow. Ain&#39;t that America!
+## 5 I love a clapping crowd, love them, clapping, for me. (Alabama lost first home game in 34 games).
+## 6                                           ðŸ\230‚....keep trying until you get the results you want.
+##   like reply
+## 1  339    64
+## 2   24     8
+## 3   18     0
+## 4   17     1
+## 5   87    18
+## 6  337    52</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
+<pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Sanders      Cory Booker 
+##            30441            40566            27892            32216 
+##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
+##            26949            31477            27097            36559 
+##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
+##            35558            29588            38548</code></pre>
+</div>
+</div>
+<div id="twitter" class="section level2">
+<h2><span class="header-section-number">2.2</span> Twitter</h2>
+<p>We use a python script to scape the data, generated csvs and details listed below:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/twitter_tweet.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb9-2" title="2"></a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
+<pre><code>##      candidate
+## 1 Donald Trump
+## 2 Donald Trump
+## 3 Donald Trump
+## 4 Donald Trump
+## 5 Donald Trump
+## 6 Donald Trump
+##                                                                                                                  tweet
+## 1                                         How many facts can one Democrat get wrong in under two minutes of testimony?
+## 2              Democrats continue to move the goalposts and stubbornly defy the standard they once set for themselves.
+## 3                                  No collusion. No obstruction. No pressure. No pushing. No quid pro quo. No nothing!
+## 4 The Democrats&#39; legislative record pales in comparison to @realDonaldTrump&#39;s three-year record as Commander in Chief.
+## 5                     @realDonaldTrump has consistently cooperated with this Congress in fulfilling its oversight &amp;amp
+## 6                                                 The elected President sets the policy for the unelected bureaucrats.</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
+<pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Sanders      Cory Booker 
+##               10               10               10               10 
+##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
+##               10               10               10               10 
+##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
+##               10               10               10</code></pre>
+</div>
+<div id="facebook" class="section level2">
+<h2><span class="header-section-number">2.3</span> Facebook</h2>
+<p>We use a python script to scape the data, generated csvs and details listed below:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/facebook_post.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb13-2" title="2"></a>
+<a class="sourceLine" id="cb13-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
+<pre><code>##      candidate
+## 1 Donald Trump
+## 2 Donald Trump
+## 3 Donald Trump
+## 4 Donald Trump
+## 5 Donald Trump
+## 6    Joe Biden
+##                                                                                                                                                                                                                                                                                post
+## 1                                                                                                                                                             Working families have found their biggest advocates in the Trump Administration. We will never stop fighting for you!
+## 2                                                                                                                                                                                                                                                     PROMISES MADE, PROMISES KEPT!
+## 3                                                                    Polling is looking really bad for impeachment-obsessed Democrats, so theyÕre rushing an already unfair process. This is a disgrace to our country. They donÕt want the American people to decide the election!
+## 4 I also have constantly asked, ÒWhy arenÕt Germany, France and other European countries helping Ukraine more? They are the biggest beneficiaries. Why is it always the good olÕ United States?Ó The Radical Left, Do Nothing Democrats, never mention this at their phony hearing!
+## 5                                                            Dems Veronica Escobar and Jackson Lee purposely misquoted my call. I said I want you to do us (our Country!) a favor, not me a favor. They know that but decided to LIE in order to make a fraudulent point! Very sad.
+## 6                                                                                 The world is laughing at President Trump. They see him for what he really is: dangerously incompetent and incapable of world leadership.We cannot give him four more years as commander in chief.</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
+<pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Snaders      Cory Booker 
+##                5                5                5                5 
+##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
+##                5                5                5                5 
+##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
+##                5                5                5</code></pre>
 
+</div>
 </div>
             </section>
 
