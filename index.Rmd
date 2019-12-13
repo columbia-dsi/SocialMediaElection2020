@@ -1,9 +1,10 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAMES HERE"
+title: "Understanding 2020 Presidential Polls from Social Media Perspective"
+author: "Kevin Gao (wg2311), Haibo Yu (hy2628)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
 # Introduction
+
 
