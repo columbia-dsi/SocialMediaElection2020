@@ -13,11 +13,11 @@ The election of the president and the vice president of the United States is an 
 
 Every once a while, the election will impact the U.S. in many aspects, such as job experience, income taxes, government investments and  since U.S. plays a key role in golabal econemy, it cerntianly drive attention from every tax payer.
 
-Foundamentaly, today's democracy allow every citizen can vote and every vote count as one.
+Every citizen can vote and every vote counts.
 
 ![Vote America - Credit: Bing Images](imgs/vote.png)
 
-However, does every individual knows enough about the candidates that they have to choose from?
+However, does every individual knows enough about the candidates that he/she has to choose from?
 
 ![Candidats - Credit: Bing Images](imgs/candidates.jpg)
 
