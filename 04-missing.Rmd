@@ -1,1 +1,131 @@
+---
+author: "Kevin Gao (wg2311), Haibo Yu (hy2628)"
+output: 
+  html_document:
+    code_folding: hide
+---
 # Missing values
+
+Due to the scrap API that we are using, and the unstable columbia school network during the final week, there is some data missing from the original result csvs in our first several attempts.
+
+Then we update the API call, using try-catch to detect the failures (i.e. 403 forbbiden,  401 unauthorized, 404 not found, API daily limitation reached, API quota used up...etc), and set up logics to re-try with waiting durations, so this helps us improve the data integration dramatically.
+
+And here is how our data looks like during missing pattern check:
+
+
+## Missing Pattern Detection
+Example for missing data detection (Data from November 2019), since we pulled the data on-demand and cleaned up, there is no missing data in our vidoe csv, as:
+```{r, warning=FALSE, echo=FALSE}
+library(dplyr)
+library(mi)
+library(extracat) 
+
+
+df <- read.csv("data/2019-11-15.csv")
+
+sample <- sample_n(df, 1000)
+
+x <- missing_data.frame(sample)
+
+image(x)
+
+# extracat::visna(sample,sort="r")
+
+# Error in extracat::visna(df, sort = "r") : No NA's in the data. For indicator matrices please use visid(x, ... ) and for factor data.frames there is visdf(x,freqvar)
+```
+
+Note: If you are trying to use extracat::visna(sample,sort="r"), you will get "Error in extracat::visna(df, sort = "r") : No NA's in the data. For indicator matrices please use visid(x, ... ) and for factor data.frames there is visdf(x,freqvar)".
+
+However, when we plot the youtube views per candidate per state, we do see some "missing data" in some states, this is due to the filter we were using when we pulled the original video data, like filter by 1 hour or 1 day, some candidates might have no data in some states, here is the intial plots we did:
+
+```{r, warning=FALSE, echo=FALSE}
+
+candidates <- c('Amy Klobuchar','Andrew Yang','Bernie Sanders','Cory Booker','Elizabeth Warren','Joe Biden','Kamala Harris','Pete Buttigieg','Tom Steyer','Tulsi Gabbard')
+
+#The following regions were missing and are being set to NA: montana, oklahoma, delaware, wyoming, alabama, alaska, idaho, maryland, vermont, utah, kentucky, maine, connecticut, michigan, missouri, oregon, district of columbia, hawaii, illinois, indiana
+
+for(i in candidates) {
+  # i-th name of candiates
+  # ------------------------------------------------------
+  temp <- filter(df, candidate == i) 
+  
+  temp <- temp %>% 
+    as.data.frame() %>% 
+    transmute(region = tolower(`state`), value = as.numeric(temp$view))
+  
+  # unique(df$region)  45 states
+  
+  temp <- temp %>%
+    group_by(region) %>%
+    summarise(value = sum(value))
+  
+  temp <- na.omit(temp)
+  
+  print(state_choropleth(temp,
+                   title = paste(i," - State Youtube Views"),
+                   legend = "View Count"))
+  
+  # ------------------------------------------------------
+}
+
+```
+
+Note: The following regions were missing and are being set to NA: montana, oklahoma, delaware, wyoming, alabama, alaska, idaho, maryland, vermont, utah, kentucky, maine, connecticut, michigan, missouri, oregon, district of columbia, hawaii, illinois, indiana
+
+
+
+## Missing Data Solution
+
+Then we have updated the parameter to expand our filter to a larger duration (1 momth, 1 year) and added re-try logic in the API call (The [code snippet](data-sources.html#apis) is shared in Chapter-2.4) to make sure we have pulled enough data per candidate per state, as you can see now from the plots based on the latest data, we don't have any "missing data" this time!
+
+Example (Data from December 2019)
+```{r, warning=FALSE, echo=FALSE}
+library(dplyr)
+
+df <- read.csv("data/2019-12-12.csv")
+
+df <- filter(df, candidate != "Donald Trump")
+
+df <- filter(df, title!="2020 Democratic Debate - SNL")  # remove unrelated videos
+
+df <- filter(df, title!="DNC Town Hall - SNL")  # remove unrelated videos
+
+df <- filter(df, title!="2020 November Democratic Debate in Atlanta | The Daily Show")  # remove unrelated videos
+
+df <- filter(df, title!="2020 October Democratic Debate in Ohio | The Daily Show")  # remove unrelated videos
+
+df <- filter(df, title!="Stephen Colbert Breaks Down The 5th Democratic Presidential Debate")  # remove unrelated videos
+
+df <- filter(df, title!="Democratic candidates debate: Opening statements l ABC News")  # remove unrelated videos
+
+for(i in candidates) {
+  # i-th name of candiates
+  # ------------------------------------------------------
+  temp <- filter(df, candidate == i) 
+  
+  temp <- temp %>% 
+    as.data.frame() %>% 
+    transmute(region = tolower(`state`), value = as.numeric(temp$view))
+  
+  # unique(df$region)  45 states
+  
+  temp <- temp %>%
+    group_by(region) %>%
+    summarise(value = sum(value))
+  
+  temp <- na.omit(temp)
+  
+  print(state_choropleth(temp,
+                   title = paste(i," - State Youtube Views"),
+                   legend = "View Count"))
+  
+  # ------------------------------------------------------
+}
+
+```
+
+
+
+
+
+[![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)

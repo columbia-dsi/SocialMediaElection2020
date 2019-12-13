@@ -24,7 +24,6 @@
 <meta name="author" content="Kevin Gao (wg2311), Haibo Yu (hy2628)" />
 
 
-<meta name="date" content="2019-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +49,13 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -142,17 +148,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.4</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtbe"><i class="fa fa-check"></i><b>2.1</b> Youtbe</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#video"><i class="fa fa-check"></i><b>2.1.1</b> Video</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtube"><i class="fa fa-check"></i><b>2.1</b> Youtube</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#videos"><i class="fa fa-check"></i><b>2.1.1</b> Videos</a></li>
 <li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#comments"><i class="fa fa-check"></i><b>2.1.2</b> Comments</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="data-sources.html"><a href="data-sources.html#tweets"><i class="fa fa-check"></i><b>2.2.1</b> Tweets</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data-sources.html"><a href="data-sources.html#posts"><i class="fa fa-check"></i><b>2.3.1</b> Posts</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#apis"><i class="fa fa-check"></i><b>2.4</b> APIs</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-pattern-detection"><i class="fa fa-check"></i><b>4.1</b> Missing Pattern Detection</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#missing-data-solution"><i class="fa fa-check"></i><b>4.2</b> Missing Data Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#youtube-1"><i class="fa fa-check"></i><b>5.1</b> Youtube</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#initial-investigation"><i class="fa fa-check"></i><b>5.1.1</b> Initial Investigation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#topic-analysis"><i class="fa fa-check"></i><b>5.1.2</b> Topic Analysis</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#popularity-analysis"><i class="fa fa-check"></i><b>5.1.3</b> Popularity Analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="results.html"><a href="results.html#comment-analysis"><i class="fa fa-check"></i><b>5.1.4</b> Comment Analysis</a></li>
+<li class="chapter" data-level="5.1.5" data-path="results.html"><a href="results.html#demographics"><i class="fa fa-check"></i><b>5.1.5</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#twitter-1"><i class="fa fa-check"></i><b>5.2</b> Twitter</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#tweet-analysis"><i class="fa fa-check"></i><b>5.2.1</b> Tweet Analysis</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#demographics-1"><i class="fa fa-check"></i><b>5.2.2</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#facebook-1"><i class="fa fa-check"></i><b>5.3</b> Facebook</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="results.html"><a href="results.html#post-analysis"><i class="fa fa-check"></i><b>5.3.1</b> Post Analysis</a></li>
+<li class="chapter" data-level="5.3.2" data-path="results.html"><a href="results.html#demographics-2"><i class="fa fa-check"></i><b>5.3.2</b> Demographics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interactive-components.html"><a href="interactive-components.html"><i class="fa fa-check"></i><b>6</b> Interactive Components</a><ul>
+<li class="chapter" data-level="6.1" data-path="interactive-components.html"><a href="interactive-components.html#interactive-choropleth-maps-r-component"><i class="fa fa-check"></i><b>6.1</b> Interactive Choropleth Maps (R Component)</a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-components.html"><a href="interactive-components.html#interactive-social-media-demographics-html-component"><i class="fa fa-check"></i><b>6.2</b> Interactive Social Media Demographics (Html Component)</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="interactive-components.html"><a href="interactive-components.html#social-media-use-over-time"><i class="fa fa-check"></i><b>6.2.1</b> Social media use over time</a></li>
+<li class="chapter" data-level="6.2.2" data-path="interactive-components.html"><a href="interactive-components.html#who-uses-social-media"><i class="fa fa-check"></i><b>6.2.2</b> Who uses social media</a></li>
+<li class="chapter" data-level="6.2.3" data-path="interactive-components.html"><a href="interactive-components.html#which-social-media-platforms-are-most-popular"><i class="fa fa-check"></i><b>6.2.3</b> Which social media platforms are most popular</a></li>
+<li class="chapter" data-level="6.2.4" data-path="interactive-components.html"><a href="interactive-components.html#how-often-americans-use-social-media-sites"><i class="fa fa-check"></i><b>6.2.4</b> How often Americans use social media sites</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -180,154 +218,128 @@ Our data source is original, collected from social meida networks, including you
 <p>Methodology: We wrote a python script (web crawler) to do the web scraping work to collect data.</p>
 <p>Obstacle: There certainly many obstacles in a project, however, here is an interesting one, when we were scraping search result data from youtube for each candidate, we faced with obstacles when grabing the full data from the lazy loading result page, which would hide large content and load those later by user scrolling down to the bottom of the page, this actually prevented us to rely on the initial html dom to scrap the full data. And it’s hard to use web scrawler in python to control the lazy loading behavior.</p>
 <p>Solution: After serveral attempts, we have resolved this by using a walk-around solution provided in youtube search feature, by adding a paramter ‘&amp;page=N’ (N is the number you would like to paginate) to laod all search result at once, then we can scrap the data page by page.</p>
-<div id="youtbe" class="section level2">
-<h2><span class="header-section-number">2.1</span> Youtbe</h2>
+<div id="youtube" class="section level2">
+<h2><span class="header-section-number">2.1</span> Youtube</h2>
 <p>We use a python script to scape the data, generated csvs and details listed below:</p>
-<div id="video" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Video</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/2019-12-12.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" title="2"></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
-<pre><code>##   index    candidate   state
-## 1     0 Donald Trump Alabama
-## 2     1 Donald Trump Alabama
-## 3     2 Donald Trump Alabama
-## 4     3 Donald Trump Alabama
-## 5     4 Donald Trump Alabama
-## 6     5 Donald Trump Alabama
-##                                                                              title
-## 1                      President Trump, Melania Trump Attend Alabama Football Game
-## 2              Trump Keeps Lying About Hurricane Dorian and Alabama: A Closer Look
-## 3                                   Donald Trump given huge ovation at Alabama/LSU
-## 4   Donald Trump displays Hurricane Dorian map apparently doctored with marker pen
-## 5 Why Is President Donald Trump Still Fixated On Alabama? | Velshi &amp; Ruhle | MSNBC
-## 6                               Baby Trump comes to Tuscaloosa for Alabama vs. LSU
-##                            media      view     time
-## 1                       VOA News   269,941 11/10/19
-## 2    Late Night with Seth Meyers 3,538,632   9/6/19
-## 3 Alabama Crimson Tide on AL.com   194,856  11/9/19
-## 4                  Guardian News   151,199   9/5/19
-## 5                          MSNBC    62,441   9/6/19
-## 6                         AL.com   128,608  11/9/19
-##                                                                                                                           description
-## 1            President Donald Trump and first lady Melania Trump attended an American football game in Alabama, Saturday, November 9.
-## 2  Seth takes a closer look at President Trump defending his doctored map showing Hurricane Dorian hitting Alabama. Â» SubscribeÂ ...
-## 3           President Donald Trump and First Lady Melania are given a standing ovation when announced at the Alabama/ LSU game in ...
-## 4 Donald Trump has caused uproar on social media after displaying a map of Hurricane Dorian&#39;s path featuring an extra loop drawnÂ ...
-## 5       President Trump won&#39;t back down from his claim that Hurricane Dorian was going to hit Alabama. Washington Post PoliticalÂ ...
-## 6        Protesters set up a giant &quot;baby Trump&quot; balloon in Monnish Park in Tuscaloosa, as the President is set to arrive for theÂ ...
-##    like dislike comment.count favorite
-## 1  3187    1732          5079        0
-## 2 41685    2935          7545        0
-## 3  1965     412          1388        0
-## 4   309      91           349        0
-## 5   415     709          1304        0
-## 6  1709    2099          2742        0
-##                                           url
-## 1 https://www.youtube.com/watch?v=gnn11RNVfvs
-## 2 https://www.youtube.com/watch?v=6n7QA0Gr_oQ
-## 3 https://www.youtube.com/watch?v=LS2Lcz-pTLM
-## 4 https://www.youtube.com/watch?v=7kew_ZYnUyg
-## 5 https://www.youtube.com/watch?v=VWjSC77BEgQ
-## 6 https://www.youtube.com/watch?v=IKv3pEy0ln4</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
+<div id="videos" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Videos</h3>
+<p>We have 52196 data entries for youtube video, and here is the summary per candidate:</p>
 <pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Sanders      Cory Booker 
 ##             4800             4824             4888             4788 
 ##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
 ##             4761             4745             4768             4960 
 ##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
 ##             4759             4095             4808</code></pre>
+<p>Here is the preview of the data, randomly sampled 10 entiries:
+<div id="htmlwidget-739049a7f934c94e6156" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-739049a7f934c94e6156">{"x":{"visdat":{"53ac10b5c45":["function () ","plotlyVisDat"]},"cur_data":"53ac10b5c45","attrs":{"53ac10b5c45":{"columnwidth":[80,80,100,150,50,50,400],"header":{"values":["Youtbe Video","candidate","state","title","like","dislike","url"],"align":["left","center","center","center","center","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Cory Booker","Amy Klobuchar","Elizabeth Warren","Bernie Sanders","Tom Steyer","Andrew Yang","Cory Booker","Tulsi Gabbard","Elizabeth Warren","Andrew Yang"],["Florida","Utah","Mississippi","Colorado","Pennsylvania","Mississippi","Kentucky","Maine","Michigan","Kentucky"],["The moment that made Cory Booker nervous with girlfriend","Sen. Amy Klobuchar on Paul Manafort, Russia \"truth hunt,\" Honest Ads Act","THE CONJURING - The Real Lorraine Warren Featurette","Bernie Sanders claims victory in Vermont (Full Speech)","Protests Erupt: Impeachment Backfires","Making Sense with Sam Harris #130 - Universal Basic Income (with Andrew Yang)","Is President Obama Holding Cory Booker Hostage?","Watch Most Heated Democratic Debate Highlights In Atlanta","Michigan voters enjoy first Democratic debate","Andrew Yang talks space, drones, climate, automation and more!"],["  298","   38","88929","  428","  820"," 5364","  196"," 8930","    0"," 5675"],[" 457","  10","1482","  51","   7"," 128","   7"," 785","   4"," 194"],["https://www.youtube.com/watch?v=0_S4j8tlyJs","https://www.youtube.com/watch?v=xtJmj_Sodrw","https://www.youtube.com/watch?v=4OdDctr0Mp0","https://www.youtube.com/watch?v=8QWQ0NW8wOM","https://www.youtube.com/watch?v=FcWQiWKydHM","https://www.youtube.com/watch?v=sI1Xwre4DBI","https://www.youtube.com/watch?v=KyoqtX6t5tw","https://www.youtube.com/watch?v=L0r7mewfITo","https://www.youtube.com/watch?v=vS7pRqMUmGs","https://www.youtube.com/watch?v=kTRXEZJkSKI"]],"align":["left","center","center","center","center","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"table"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"columnwidth":[80,80,100,150,50,50,400],"header":{"values":["Youtbe Video","candidate","state","title","like","dislike","url"],"align":["left","center","center","center","center","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Cory Booker","Amy Klobuchar","Elizabeth Warren","Bernie Sanders","Tom Steyer","Andrew Yang","Cory Booker","Tulsi Gabbard","Elizabeth Warren","Andrew Yang"],["Florida","Utah","Mississippi","Colorado","Pennsylvania","Mississippi","Kentucky","Maine","Michigan","Kentucky"],["The moment that made Cory Booker nervous with girlfriend","Sen. Amy Klobuchar on Paul Manafort, Russia \"truth hunt,\" Honest Ads Act","THE CONJURING - The Real Lorraine Warren Featurette","Bernie Sanders claims victory in Vermont (Full Speech)","Protests Erupt: Impeachment Backfires","Making Sense with Sam Harris #130 - Universal Basic Income (with Andrew Yang)","Is President Obama Holding Cory Booker Hostage?","Watch Most Heated Democratic Debate Highlights In Atlanta","Michigan voters enjoy first Democratic debate","Andrew Yang talks space, drones, climate, automation and more!"],["  298","   38","88929","  428","  820"," 5364","  196"," 8930","    0"," 5675"],[" 457","  10","1482","  51","   7"," 128","   7"," 785","   4"," 194"],["https://www.youtube.com/watch?v=0_S4j8tlyJs","https://www.youtube.com/watch?v=xtJmj_Sodrw","https://www.youtube.com/watch?v=4OdDctr0Mp0","https://www.youtube.com/watch?v=8QWQ0NW8wOM","https://www.youtube.com/watch?v=FcWQiWKydHM","https://www.youtube.com/watch?v=sI1Xwre4DBI","https://www.youtube.com/watch?v=KyoqtX6t5tw","https://www.youtube.com/watch?v=L0r7mewfITo","https://www.youtube.com/watch?v=vS7pRqMUmGs","https://www.youtube.com/watch?v=kTRXEZJkSKI"]],"align":["left","center","center","center","center","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"type":"table","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
 </div>
 <div id="comments" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Comments</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/2019-12-12_comment.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb5-2" title="2"></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
-<pre><code>##   index    candidate                                         url
-## 1     0 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
-## 2     1 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
-## 3     2 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
-## 4     3 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
-## 5     4 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
-## 6     5 Donald Trump https://www.youtube.com/watch?v=gnn11RNVfvs
-##                                                                                             comment
-## 1                                                                  and Epstein didn&#39;t kill himself!
-## 2                                There&#39;s a lot of butt hurt leftists in these comments, bretty gud.
-## 3                                                          They&#39;re still crying over here in NY lol
-## 4                                                       A roaring ovation. Wow. Ain&#39;t that America!
-## 5 I love a clapping crowd, love them, clapping, for me. (Alabama lost first home game in 34 games).
-## 6                                           ðŸ\230‚....keep trying until you get the results you want.
-##   like reply
-## 1  339    64
-## 2   24     8
-## 3   18     0
-## 4   17     1
-## 5   87    18
-## 6  337    52</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
+<p>We have 356891 data entries for youtube video comment, and here is the summary per candidate:</p>
 <pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Sanders      Cory Booker 
 ##            30441            40566            27892            32216 
 ##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
 ##            26949            31477            27097            36559 
 ##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
 ##            35558            29588            38548</code></pre>
+<p>Here is the preview of the data, randomly sampled 10 entiries:
+<div id="htmlwidget-5d2488b2d632ef5bac06" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5d2488b2d632ef5bac06">{"x":{"visdat":{"53ac124d130a":["function () ","plotlyVisDat"]},"cur_data":"53ac124d130a","attrs":{"53ac124d130a":{"columnwidth":[100,100,400,150,50,50],"header":{"values":["Youtube Tweet","candidate","url","comment","like","reply"],"align":["left","center","center","center","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Cory Booker","Cory Booker","Elizabeth Warren","Kamala Harris","Cory Booker","Joe Biden","Pete Buttigieg","Andrew Yang","Kamala Harris","Amy Klobuchar"],["https://www.youtube.com/watch?v=2X0LtX88b4Q","https://www.youtube.com/watch?v=L0r7mewfITo","https://www.youtube.com/watch?v=1Jg8h2A5gwA","https://www.youtube.com/watch?v=wcvcj_VuywA","https://www.youtube.com/watch?v=kRoGR3AYads","https://www.youtube.com/watch?v=Y3YKdHeBfko","https://www.youtube.com/watch?v=m-Ri-SeOnoc","https://www.youtube.com/watch?v=doXyf06SfFE","https://www.youtube.com/watch?v=Kx3FmT4W82s","https://www.youtube.com/watch?v=0Z5-jDkC4XY"],["\"President Spartacus \"? Hahahahahahahahaha hehehehehe hahahahahahahahaha","When Tulsi smiles before a comeback sheâ€™s about to end your whole career!","hahah that is hilarious, she's so butt hurt.","I like how she looks surprised when she learns Rosenstein was cleared to make a decision on the Mueller report. Where have you  been Kamala? That happened at the beginning of all this.","I really like this guy. And there's no way he's going to win.","\"A curious Democratic candidate.\" LOL. That's one way of saying it. Bernie is better.","Biben and Buttigieg scare the crap out of trump. It's wonderful.","The next time you come to LA, I will be there!","Republicans already prepared to defend trump regardless of truth. <br />They don't care, just want to keep their power.","Yes!"],["  9","157"," 84"," 37","  6","  5"," 88"," 67","139","  3"],["2","1","2","8","1","0","7","4","4","0"]],"align":["left","center","center","center","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"table"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"columnwidth":[100,100,400,150,50,50],"header":{"values":["Youtube Tweet","candidate","url","comment","like","reply"],"align":["left","center","center","center","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Cory Booker","Cory Booker","Elizabeth Warren","Kamala Harris","Cory Booker","Joe Biden","Pete Buttigieg","Andrew Yang","Kamala Harris","Amy Klobuchar"],["https://www.youtube.com/watch?v=2X0LtX88b4Q","https://www.youtube.com/watch?v=L0r7mewfITo","https://www.youtube.com/watch?v=1Jg8h2A5gwA","https://www.youtube.com/watch?v=wcvcj_VuywA","https://www.youtube.com/watch?v=kRoGR3AYads","https://www.youtube.com/watch?v=Y3YKdHeBfko","https://www.youtube.com/watch?v=m-Ri-SeOnoc","https://www.youtube.com/watch?v=doXyf06SfFE","https://www.youtube.com/watch?v=Kx3FmT4W82s","https://www.youtube.com/watch?v=0Z5-jDkC4XY"],["\"President Spartacus \"? Hahahahahahahahaha hehehehehe hahahahahahahahaha","When Tulsi smiles before a comeback sheâ€™s about to end your whole career!","hahah that is hilarious, she's so butt hurt.","I like how she looks surprised when she learns Rosenstein was cleared to make a decision on the Mueller report. Where have you  been Kamala? That happened at the beginning of all this.","I really like this guy. And there's no way he's going to win.","\"A curious Democratic candidate.\" LOL. That's one way of saying it. Bernie is better.","Biben and Buttigieg scare the crap out of trump. It's wonderful.","The next time you come to LA, I will be there!","Republicans already prepared to defend trump regardless of truth. <br />They don't care, just want to keep their power.","Yes!"],["  9","157"," 84"," 37","  6","  5"," 88"," 67","139","  3"],["2","1","2","8","1","0","7","4","4","0"]],"align":["left","center","center","center","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"type":"table","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
 </div>
 </div>
 <div id="twitter" class="section level2">
 <h2><span class="header-section-number">2.2</span> Twitter</h2>
+<div id="tweets" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Tweets</h3>
 <p>We use a python script to scape the data, generated csvs and details listed below:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/twitter_tweet.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb9-2" title="2"></a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
-<pre><code>##      candidate
-## 1 Donald Trump
-## 2 Donald Trump
-## 3 Donald Trump
-## 4 Donald Trump
-## 5 Donald Trump
-## 6 Donald Trump
-##                                                                                                                  tweet
-## 1                                         How many facts can one Democrat get wrong in under two minutes of testimony?
-## 2              Democrats continue to move the goalposts and stubbornly defy the standard they once set for themselves.
-## 3                                  No collusion. No obstruction. No pressure. No pushing. No quid pro quo. No nothing!
-## 4 The Democrats&#39; legislative record pales in comparison to @realDonaldTrump&#39;s three-year record as Commander in Chief.
-## 5                     @realDonaldTrump has consistently cooperated with this Congress in fulfilling its oversight &amp;amp
-## 6                                                 The elected President sets the policy for the unelected bureaucrats.</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
-<pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Sanders      Cory Booker 
-##               10               10               10               10 
-##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
-##               10               10               10               10 
-##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
-##               10               10               10</code></pre>
+<p>Here is the preview of the data, randomly sampled 10 entiries:
+<div id="htmlwidget-0cddd13c87a12e4f40e0" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0cddd13c87a12e4f40e0">{"x":{"visdat":{"53ac2a6023eb":["function () ","plotlyVisDat"]},"cur_data":"53ac2a6023eb","attrs":{"53ac2a6023eb":{"columnwidth":[100,80,400],"header":{"values":["TWitter Tweet","candidate","tweet"],"align":["left","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Donald Trump","Donald Trump","Cory Booker","Andrew Yang","Tom Steyer","Joe Biden","Cory Booker","Pete Buttigieg","Elizabeth Warren","Pete Buttigieg"],["Today's impeachment markup has confirmed our worst fears","Not the other way around.","In America, 1 in 6 renting households spend more than half of their monthly income on rent. We have a housing crisis and we need a radical plan to ensure people are able to access this basic human right.","#1 in small donors. Grassroots funding. No corporate PAC money.  ThatÕs the #YangGang. This campaign is all about people fighting for other people.","Deeply saddened by the shootings in Jersey City. Hate and anti-semitism have no place in our country and I call on all Americans to speak out and denounce this disturbing trend in our societyÑwe owe it to victims and their families.","Folks are coming together across the country to host watch parties for next week's Democratic debate! Head to https://joe.link/35caMtB to sign up to host one in your community.","My entire career I've brought people together to take on our toughest challenges. I beat slumlords taking advantage of low-income families, ushered in NewarkÕs greatest economic growth in a generation, and overcame Washington's broken politics to pass criminal justice reform.","One year ago today, China arbitrarily imprisoned Michael Kovrig and Michael Spavor. China has also targeted innocent Americans with cruel and unjustified exit bans. From Dandong to Xinjiang, China's human rights violations must come to an end.","Pete Frates challenged us all to fight harder for a cure to ALS Ð & in doing so he inspired the world. My heart goes out to PeteÕs wife, daughter, family & friends in MA & across the US. LetÕs remember him by keeping up the fight for the people we love.","Thank you @GretaThunberg for speaking the truth, demanding we listen, and bringing people from different generations, backgrounds, and nations together to combat climate catastrophe."]],"align":["left","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"table"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"columnwidth":[100,80,400],"header":{"values":["TWitter Tweet","candidate","tweet"],"align":["left","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Donald Trump","Donald Trump","Cory Booker","Andrew Yang","Tom Steyer","Joe Biden","Cory Booker","Pete Buttigieg","Elizabeth Warren","Pete Buttigieg"],["Today's impeachment markup has confirmed our worst fears","Not the other way around.","In America, 1 in 6 renting households spend more than half of their monthly income on rent. We have a housing crisis and we need a radical plan to ensure people are able to access this basic human right.","#1 in small donors. Grassroots funding. No corporate PAC money.  ThatÕs the #YangGang. This campaign is all about people fighting for other people.","Deeply saddened by the shootings in Jersey City. Hate and anti-semitism have no place in our country and I call on all Americans to speak out and denounce this disturbing trend in our societyÑwe owe it to victims and their families.","Folks are coming together across the country to host watch parties for next week's Democratic debate! Head to https://joe.link/35caMtB to sign up to host one in your community.","My entire career I've brought people together to take on our toughest challenges. I beat slumlords taking advantage of low-income families, ushered in NewarkÕs greatest economic growth in a generation, and overcame Washington's broken politics to pass criminal justice reform.","One year ago today, China arbitrarily imprisoned Michael Kovrig and Michael Spavor. China has also targeted innocent Americans with cruel and unjustified exit bans. From Dandong to Xinjiang, China's human rights violations must come to an end.","Pete Frates challenged us all to fight harder for a cure to ALS Ð & in doing so he inspired the world. My heart goes out to PeteÕs wife, daughter, family & friends in MA & across the US. LetÕs remember him by keeping up the fight for the people we love.","Thank you @GretaThunberg for speaking the truth, demanding we listen, and bringing people from different generations, backgrounds, and nations together to combat climate catastrophe."]],"align":["left","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"type":"table","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
+</div>
 </div>
 <div id="facebook" class="section level2">
 <h2><span class="header-section-number">2.3</span> Facebook</h2>
+<div id="posts" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Posts</h3>
 <p>We use a python script to scape the data, generated csvs and details listed below:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/facebook_post.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb13-2" title="2"></a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="kw">head</span>(df)</a></code></pre></div>
-<pre><code>##      candidate
-## 1 Donald Trump
-## 2 Donald Trump
-## 3 Donald Trump
-## 4 Donald Trump
-## 5 Donald Trump
-## 6    Joe Biden
-##                                                                                                                                                                                                                                                                                post
-## 1                                                                                                                                                             Working families have found their biggest advocates in the Trump Administration. We will never stop fighting for you!
-## 2                                                                                                                                                                                                                                                     PROMISES MADE, PROMISES KEPT!
-## 3                                                                    Polling is looking really bad for impeachment-obsessed Democrats, so theyÕre rushing an already unfair process. This is a disgrace to our country. They donÕt want the American people to decide the election!
-## 4 I also have constantly asked, ÒWhy arenÕt Germany, France and other European countries helping Ukraine more? They are the biggest beneficiaries. Why is it always the good olÕ United States?Ó The Radical Left, Do Nothing Democrats, never mention this at their phony hearing!
-## 5                                                            Dems Veronica Escobar and Jackson Lee purposely misquoted my call. I said I want you to do us (our Country!) a favor, not me a favor. They know that but decided to LIE in order to make a fraudulent point! Very sad.
-## 6                                                                                 The world is laughing at President Trump. They see him for what he really is: dangerously incompetent and incapable of world leadership.We cannot give him four more years as commander in chief.</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">summary</span>(df<span class="op">$</span>candidate)</a></code></pre></div>
-<pre><code>##    Amy Klobuchar      Andrew Yang   Bernie Snaders      Cory Booker 
-##                5                5                5                5 
-##     Donald Trump Elizabeth Warren        Joe Biden    Kamala Harris 
-##                5                5                5                5 
-##   Pete Buttigieg       Tom Steyer    Tulsi Gabbard 
-##                5                5                5</code></pre>
+<p>Here is the preview of the data, randomly sampled 10 entiries:
+<div id="htmlwidget-5e18a24a12ce0e8f716b" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5e18a24a12ce0e8f716b">{"x":{"visdat":{"53ac84341d":["function () ","plotlyVisDat"]},"cur_data":"53ac84341d","attrs":{"53ac84341d":{"columnwidth":[100,80,400],"header":{"values":["Facebook Post","candidate","post"],"align":["left","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Andrew Yang","Cory Booker","Donald Trump","Andrew Yang","Amy Klobuchar","Andrew Yang","Pete Buttigieg","Elizabeth Warren","Andrew Yang","Donald Trump"],["#YangGang, letÕs ring in the New Year with a New Way Forward! Join me on #NYE in New Hampshire for drinks, music and more! Get your tickets now before we run out! https://yang2020.social/nye","You should be able to afford health care for your family. You should be able to retire with dignity and respect. And you should be able to give your children the kind of education that allows them to dream bigger, go farther and accomplish even more than you could ever imagine.","Working families have found their biggest advocates in the Trump Administration. We will never stop fighting for you!","#YangGang, we absolutely need to raise $2 million by midnight on Sunday to completely fund our ground game in Iowa. Donate now to help us continue making history! https://www.yang2020.com","Like I said to the Teamsters: When unions are strong, America is strong.","Back by popular demand! Marijuana MATH Beanies are BACK IN STOCK! Get yours now while supplies last.","What weÕre building in Iowa is bigger than this momentÑitÕs a movement.","WeÕre weeks away from the first caucuses and primaries. If a few more people on Facebook chip in tonight, weÕll be on track to grow our grassroots movement before voting begins.IÕm deeply grateful for any amount youÕre able to give.","We'll be livestreaming from the bus tonight! We might even make a few phone calls to those who have donated today- donate now and you never know!","PROMISES MADE, PROMISES KEPT!"]],"align":["left","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"table"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"columnwidth":[100,80,400],"header":{"values":["Facebook Post","candidate","post"],"align":["left","center","center"],"line":{"width":1,"color":"black"},"fill":{"color":"rgb(235, 100, 230)"},"font":{"family":"Arial","size":14,"color":"white"}},"cells":{"values":[["1","2","3","4","5","6","7","8","9","10"],["Andrew Yang","Cory Booker","Donald Trump","Andrew Yang","Amy Klobuchar","Andrew Yang","Pete Buttigieg","Elizabeth Warren","Andrew Yang","Donald Trump"],["#YangGang, letÕs ring in the New Year with a New Way Forward! Join me on #NYE in New Hampshire for drinks, music and more! Get your tickets now before we run out! https://yang2020.social/nye","You should be able to afford health care for your family. You should be able to retire with dignity and respect. And you should be able to give your children the kind of education that allows them to dream bigger, go farther and accomplish even more than you could ever imagine.","Working families have found their biggest advocates in the Trump Administration. We will never stop fighting for you!","#YangGang, we absolutely need to raise $2 million by midnight on Sunday to completely fund our ground game in Iowa. Donate now to help us continue making history! https://www.yang2020.com","Like I said to the Teamsters: When unions are strong, America is strong.","Back by popular demand! Marijuana MATH Beanies are BACK IN STOCK! Get yours now while supplies last.","What weÕre building in Iowa is bigger than this momentÑitÕs a movement.","WeÕre weeks away from the first caucuses and primaries. If a few more people on Facebook chip in tonight, weÕll be on track to grow our grassroots movement before voting begins.IÕm deeply grateful for any amount youÕre able to give.","We'll be livestreaming from the bus tonight! We might even make a few phone calls to those who have donated today- donate now and you never know!","PROMISES MADE, PROMISES KEPT!"]],"align":["left","center","center"],"line":{"color":"black","width":1},"fill":{"color":["rgb(235, 193, 238)","rgba(228, 222, 249, 0.65)"]},"font":{"family":"Arial","size":12,"color":"black"}},"type":"table","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script></p>
+</div>
+</div>
+<div id="apis" class="section level2">
+<h2><span class="header-section-number">2.4</span> APIs</h2>
+<p>Here is our code sample to show the API that we are using to pull the data (Youtube):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">def</span> helperFinder(VideoId):</a>
+<a class="sourceLine" id="cb3-2" title="2">    headers <span class="op">=</span> {<span class="st">&#39;Accept&#39;</span>: <span class="st">&#39;*/*&#39;</span>,</a>
+<a class="sourceLine" id="cb3-3" title="3">               <span class="st">&#39;Accept-Language&#39;</span>: <span class="st">&#39;en-US,en;q=0.8&#39;</span>,</a>
+<a class="sourceLine" id="cb3-4" title="4">               <span class="st">&#39;Cache-Control&#39;</span>: <span class="st">&#39;max-age=0&#39;</span>,</a>
+<a class="sourceLine" id="cb3-5" title="5">               <span class="st">&#39;User-Agent&#39;</span>: <span class="st">&#39;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36&#39;</span>,</a>
+<a class="sourceLine" id="cb3-6" title="6">               <span class="st">&#39;Connection&#39;</span>: <span class="st">&#39;keep-alive&#39;</span>,</a>
+<a class="sourceLine" id="cb3-7" title="7">               <span class="st">&#39;Referer&#39;</span>: <span class="st">&#39;http://www.youtube.com/&#39;</span></a>
+<a class="sourceLine" id="cb3-8" title="8">               }</a>
+<a class="sourceLine" id="cb3-9" title="9">    key <span class="op">=</span> <span class="st">&quot;&lt;Your Google Youtbue API Key&gt;&quot;</span></a>
+<a class="sourceLine" id="cb3-10" title="10">    helper <span class="op">=</span> <span class="st">&quot;https://www.googleapis.com/youtube/v3/videos?id=</span><span class="sc">{}</span><span class="st">&amp;part=snippet,statistics,recordingDetails&amp;key=</span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(VideoId,key)</a>
+<a class="sourceLine" id="cb3-11" title="11">    <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb3-12" title="12">        h <span class="op">=</span> urllib.request.urlopen(urllib.request.Request(helper,headers<span class="op">=</span>headers))</a>
+<a class="sourceLine" id="cb3-13" title="13">        r <span class="op">=</span> h.read() <span class="co"># r is bytes</span></a>
+<a class="sourceLine" id="cb3-14" title="14">        r <span class="op">=</span> json.loads(r) <span class="co"># r now is a dict</span></a>
+<a class="sourceLine" id="cb3-15" title="15">        <span class="bu">print</span>(<span class="st">&quot;Success:&quot;</span>, VideoId)</a>
+<a class="sourceLine" id="cb3-16" title="16">    <span class="cf">except</span> urllib.request.HTTPError:</a>
+<a class="sourceLine" id="cb3-17" title="17">        flg <span class="op">=</span> <span class="va">False</span></a>
+<a class="sourceLine" id="cb3-18" title="18">        <span class="cf">while</span> <span class="va">True</span>:</a>
+<a class="sourceLine" id="cb3-19" title="19">            <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb3-20" title="20">                h <span class="op">=</span> urllib.request.urlopen(urllib.request.Request(helper,headers<span class="op">=</span>headers))</a>
+<a class="sourceLine" id="cb3-21" title="21">                r <span class="op">=</span> h.read() <span class="co"># r is bytes</span></a>
+<a class="sourceLine" id="cb3-22" title="22">                r <span class="op">=</span> json.loads(r) <span class="co"># r now is a dict</span></a>
+<a class="sourceLine" id="cb3-23" title="23">                flg <span class="op">=</span> <span class="va">True</span></a>
+<a class="sourceLine" id="cb3-24" title="24">                <span class="cf">break</span></a>
+<a class="sourceLine" id="cb3-25" title="25">            <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb3-26" title="26">                <span class="cf">pass</span></a>
+<a class="sourceLine" id="cb3-27" title="27"></a>
+<a class="sourceLine" id="cb3-28" title="28">        <span class="cf">if</span> flg:</a>
+<a class="sourceLine" id="cb3-29" title="29">            <span class="bu">print</span>(<span class="st">&quot;Success:&quot;</span>, VideoId)</a>
+<a class="sourceLine" id="cb3-30" title="30">        <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb3-31" title="31">            <span class="bu">print</span>(<span class="st">&quot;Failure:&quot;</span>, VideoId)</a>
+<a class="sourceLine" id="cb3-32" title="32">        <span class="cf">return</span> <span class="va">None</span></a>
+<a class="sourceLine" id="cb3-33" title="33">        </a>
+<a class="sourceLine" id="cb3-34" title="34">    <span class="kw">def</span> findTime():</a>
+<a class="sourceLine" id="cb3-35" title="35">        timeStamp <span class="op">=</span> r[<span class="st">&quot;items&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;snippet&quot;</span>][<span class="st">&quot;publishedAt&quot;</span>]</a>
+<a class="sourceLine" id="cb3-36" title="36">        trueTime <span class="op">=</span> timeStamp[<span class="dv">0</span>:<span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb3-37" title="37">        <span class="cf">return</span> trueTime</a>
+<a class="sourceLine" id="cb3-38" title="38"></a>
+<a class="sourceLine" id="cb3-39" title="39">    <span class="kw">def</span> findLikeCount():</a>
+<a class="sourceLine" id="cb3-40" title="40">        <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb3-41" title="41">            likeCount <span class="op">=</span> r[<span class="st">&quot;items&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;statistics&quot;</span>][<span class="st">&quot;likeCount&quot;</span>]</a>
+<a class="sourceLine" id="cb3-42" title="42">        <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb3-43" title="43">            likeCount <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb3-44" title="44">        <span class="cf">return</span> <span class="bu">int</span>(likeCount)</a>
+<a class="sourceLine" id="cb3-45" title="45"></a>
+<a class="sourceLine" id="cb3-46" title="46">    <span class="kw">def</span> findDislikeCount():</a>
+<a class="sourceLine" id="cb3-47" title="47">        <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb3-48" title="48">            dislikeCount <span class="op">=</span> r[<span class="st">&quot;items&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;statistics&quot;</span>][<span class="st">&quot;dislikeCount&quot;</span>]</a>
+<a class="sourceLine" id="cb3-49" title="49">        <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb3-50" title="50">            dislikeCount <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb3-51" title="51">        <span class="cf">return</span> <span class="bu">int</span>(dislikeCount)</a>
+<a class="sourceLine" id="cb3-52" title="52"></a>
+<a class="sourceLine" id="cb3-53" title="53">    <span class="kw">def</span> findFavoriteCount():</a>
+<a class="sourceLine" id="cb3-54" title="54">        <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb3-55" title="55">            favoriteCount <span class="op">=</span> r[<span class="st">&quot;items&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;statistics&quot;</span>][<span class="st">&quot;favoriteCount&quot;</span>]</a>
+<a class="sourceLine" id="cb3-56" title="56">        <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb3-57" title="57">            favoriteCount <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb3-58" title="58">        <span class="cf">return</span> <span class="bu">int</span>(favoriteCount)</a>
+<a class="sourceLine" id="cb3-59" title="59"></a>
+<a class="sourceLine" id="cb3-60" title="60">    <span class="kw">def</span> findCommentCount():</a>
+<a class="sourceLine" id="cb3-61" title="61">        <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb3-62" title="62">            commentCount <span class="op">=</span> r[<span class="st">&quot;items&quot;</span>][<span class="dv">0</span>][<span class="st">&quot;statistics&quot;</span>][<span class="st">&quot;commentCount&quot;</span>]</a>
+<a class="sourceLine" id="cb3-63" title="63">        <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb3-64" title="64">            commentCount <span class="op">=</span> <span class="dv">-1</span></a>
+<a class="sourceLine" id="cb3-65" title="65">        <span class="cf">return</span> <span class="bu">int</span>(commentCount)</a>
+<a class="sourceLine" id="cb3-66" title="66"></a>
+<a class="sourceLine" id="cb3-67" title="67">    <span class="cf">return</span> {<span class="st">&quot;VideoId&quot;</span>:VideoId,<span class="st">&quot;time&quot;</span>:findTime(),<span class="st">&quot;likeCount&quot;</span>:findLikeCount(),<span class="st">&quot;dislikeCount&quot;</span>:findDislikeCount(),</a>
+<a class="sourceLine" id="cb3-68" title="68">           <span class="st">&quot;favorCount&quot;</span>:findFavoriteCount(),<span class="st">&quot;commentCount&quot;</span>:findCommentCount()}</a></code></pre></div>
+<p><a href="https://github.com/columbia-dsi/SocialMediaElection2020"><img src="imgs/GitHub.png" alt="Github" /></a></p>
 
 </div>
 </div>

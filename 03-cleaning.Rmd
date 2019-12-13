@@ -1,1 +1,133 @@
+---
+author: "Kevin Gao (wg2311), Haibo Yu (hy2628)"
+output: 
+  html_document:
+    code_folding: hide
+---
 # Data transformation
+
+When we intially pulled youtube data, we did several plots and observed some inconsistent pattern with online 2020 presidential polls, so we digged into the result csvs and started to investigate what has been misaligned in the youtube original data.
+
+After random checks based on URLs, we first noticed some weirds characters in csv, like extrac title columns added due to the pulling code re-schedule, we can easily manually cleaned up those. 
+
+Then we noticed some misformatted and duplicate columns during checking after polling scripts, this is due to the API failture and re-tries, we cleand it up in python script (duplicate entires), and R script (date time formats).
+
+Then we noticed some of the candidates have extremely unlikely total views from the aggregation level data, so we sorted the videos based on their views, and picked the top ones to eyespot check, then we found some videos that belonged to everyone, which was not specifically related to one candidate (Examples: "2020 Democratic Debate - SNL", "DNC Town Hall - SNL","2020 November Democratic Debate in Atlanta | The Daily Show","2020 October Democratic Debate in Ohio | The Daily Show"...etc). After we filtered them out later in R data frame, our plots looked better.
+
+We alos filtered out Mr."Donald Trump", since he is not one of the democratic candidates, who are related to the ongoing DNC election right now.
+
+And here is the summary of video data per candidate after the cleaning:
+
+```{r, warning=FALSE, echo=FALSE}
+library(tidyverse)
+library(dplyr)
+library(choroplethr)
+library(ggplot2)
+
+# load social meida data - Youtube, from 12/12/2019:
+df <- read.csv("data/2019-12-12.csv")
+
+# toString(df$time)
+# typeof(df$time)
+# 
+# as.Date(paste("20",c(unlist(strsplit(toString(df$time),"/")))[3],"-",c(unlist(strsplit(toString(df$time),"/")))[1],"-",c(unlist(strsplit(toString(df$time),"/")))[2],sep=""), format = "%Y-%m-%d")
+# 
+# tt <- strsplit(toString(df$time[0]),"/")
+# xx <- df$time[1]
+# 
+# df <- filter(df, as.Date(paste("20",c(unlist(strsplit(toString(time),"/")))[3],"-",c(unlist(strsplit(toString(time),"/")))[1],"-",c(unlist(strsplit(toString(time),"/")))[2],sep=""), format = "%Y-%m-%d") > as.Date("2019-1-1", format = "%Y-%m-%d")) 
+
+df <- filter(df, candidate != "Donald Trump") 
+
+df <- filter(df, candidate != "Donald Trump")
+
+df <- filter(df, title!="2020 Democratic Debate - SNL")  # remove irrelated videos
+
+df <- filter(df, title!="DNC Town Hall - SNL")  # remove irrelated videos
+
+df <- filter(df, title!="2020 November Democratic Debate in Atlanta | The Daily Show")  # remove irrelated videos
+
+df <- filter(df, title!="2020 October Democratic Debate in Ohio | The Daily Show")  # remove irrelated videos
+
+df <- filter(df, title!="Stephen Colbert Breaks Down The 5th Democratic Presidential Debate")  # remove irrelated videos
+
+df <- filter(df, title!="Democratic candidates debate: Opening statements l ABC News")  # remove irrelated videos
+
+
+# df <- filter(df, grepl(candidate, title, fixed=FALSE)) 
+
+# df <- filter(df, grepl(toString(candidate), toString(title), fixed=TRUE)) #remove due to huge lost of data
+
+# Intially, use one date point (on 11/15/2019), we would like to visualize and rank these total popularity of each candiates on youtube:
+
+# Ploting:
+summary(df$candidate)
+```
+
+Now we can see the 10 randomly selected sample entires from our video data:
+```{r, warning=FALSE, echo=FALSE}
+sample <- sample_n(df[,c(2,3,4,9,10,13)], 10)
+
+library(plotly)
+
+p <- plot_ly(
+  type = 'table',
+  columnwidth = c(80,80,100,150,50,50,400),
+  header = list(
+    values = c("Youtbe Video", names(sample)),
+  align = c('left', rep('center', ncol(sample))),
+  line = list(width = 1, color = 'black'),
+  fill = list(color = 'rgb(235, 100, 230)'),
+  font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(
+      rownames(sample), 
+      t(as.matrix(unname(sample)))
+    ),
+    align = c('left', rep('center', ncol(sample))),
+    line = list(color = "black", width = 1),
+    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+p
+```
+
+Now can continue to aggregate the data, i.e. sum the total video videws group by candidate to see in general who is mostly being watched in youtube online:
+```{r, warning=FALSE, echo=FALSE}
+
+temp <- 
+  df %>%
+  group_by(candidate) %>%
+  summarise(view=sum(as.numeric(view)))
+
+p <- plot_ly(
+  type = 'table',
+  header = list(
+    values = c("Youtbe Video", names(temp)),
+  align = c('left', rep('center', ncol(temp))),
+  line = list(width = 1, color = 'black'),
+  fill = list(color = 'rgb(235, 100, 230)'),
+  font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(
+      rownames(temp), 
+      t(as.matrix(unname(temp)))
+    ),
+    align = c('left', rep('center', ncol(temp))),
+    line = list(color = "black", width = 1),
+    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+p
+```
+
+
+
+
+
+
+[![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)

@@ -1,3 +1,9 @@
+---
+author: "Kevin Gao (wg2311), Haibo Yu (hy2628)"
+output: 
+  html_document:
+    code_folding: hide
+---
 # Data sources
 
 We conduct study around 3 social meida platform: Youtube, Twiter, Facebook.
@@ -10,45 +16,138 @@ Obstacle: There certainly many obstacles in a project, however, here is an inter
 Solution: After serveral attempts, we have resolved this by using a walk-around solution provided in youtube search feature, by adding a paramter '&page=N' (N is the number you would like to paginate) to laod all search result at once, then we can scrap the data page by page.
 
 
-## Youtbe
+## Youtube
 
 We use a python script to scape the data, generated csvs and details listed below:
 
-### Video
+### Videos
 
-```{r}
+We have 52196 data entries for youtube video, and here is the summary per candidate:
+```{r, echo=FALSE}
+library(dplyr)
 
 df <- read.csv("data/2019-12-12.csv")
 
-head(df)
+sample <- sample_n(df[,c(2,3,4,9,10,13)], 10)
 
 summary(df$candidate)
+```
+
+
+Here is the preview of the data, randomly sampled 10 entiries:
+```{r, echo=FALSE}
+library(plotly)
+
+p <- plot_ly(
+  type = 'table',
+  columnwidth = c(80,80,100,150,50,50,400),
+  header = list(
+    values = c("Youtbe Video", names(sample)),
+  align = c('left', rep('center', ncol(sample))),
+  line = list(width = 1, color = 'black'),
+  fill = list(color = 'rgb(235, 100, 230)'),
+  font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(
+      rownames(sample), 
+      t(as.matrix(unname(sample)))
+    ),
+    align = c('left', rep('center', ncol(sample))),
+    line = list(color = "black", width = 1),
+    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+p
 
 ```
 
 ### Comments
 
-```{r}
+We have 356891 data entries for youtube video comment, and here is the summary per candidate:
+```{r, echo=FALSE}
+library(dplyr)
 
 df <- read.csv("data/2019-12-12_comment.csv")
 
-head(df)
+sample <- sample_n(df[,c(2,3,4,5,6)], 10)
 
 summary(df$candidate)
 
 ```
 
+Here is the preview of the data, randomly sampled 10 entiries:
+```{r, echo=FALSE}
+library(plotly)
+
+p <- plot_ly(
+  type = 'table',
+  columnwidth = c(100,100,400,150,50,50),
+  header = list(
+    values = c("Youtube Tweet", names(sample)),
+  align = c('left', rep('center', ncol(sample))),
+  line = list(width = 1, color = 'black'),
+  fill = list(color = 'rgb(235, 100, 230)'),
+  font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(
+      rownames(sample), 
+      t(as.matrix(unname(sample)))
+    ),
+    align = c('left', rep('center', ncol(sample))),
+    line = list(color = "black", width = 1),
+    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+p
+```
+
 ## Twitter
+
+
+### Tweets
 
 We use a python script to scape the data, generated csvs and details listed below:
 
-```{r}
+```{r, echo=FALSE}
+library(dplyr)
 
 df <- read.csv("data/twitter_tweet.csv")
 
-head(df)
+sample <- sample_n(df, 10)
 
-summary(df$candidate)
+# summary(df$candidate)
+```
+
+Here is the preview of the data, randomly sampled 10 entiries:
+```{r, echo=FALSE}
+library(plotly)
+
+p <- plot_ly(
+  type = 'table',
+  columnwidth = c(100,80,400),
+  header = list(
+    values = c("TWitter Tweet", names(sample)),
+  align = c('left', rep('center', ncol(sample))),
+  line = list(width = 1, color = 'black'),
+  fill = list(color = 'rgb(235, 100, 230)'),
+  font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(
+      rownames(sample), 
+      t(as.matrix(unname(sample)))
+    ),
+    align = c('left', rep('center', ncol(sample))),
+    line = list(color = "black", width = 1),
+    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+p
 
 ```
 
@@ -56,19 +155,130 @@ summary(df$candidate)
 
 ## Facebook
 
+### Posts
+
 We use a python script to scape the data, generated csvs and details listed below:
 
 
-```{r}
+```{r, echo=FALSE}
+library(dplyr)
+
 
 df <- read.csv("data/facebook_post.csv")
 
-head(df)
+sample <- sample_n(df, 10)
 
-summary(df$candidate)
+# summary(df$candidate)
+```
+
+Here is the preview of the data, randomly sampled 10 entiries:
+```{r, echo=FALSE}
+library(plotly)
+
+p <- plot_ly(
+  type = 'table',
+  columnwidth = c(100,80,400),
+  header = list(
+    values = c("Facebook Post", names(sample)),
+  align = c('left', rep('center', ncol(sample))),
+  line = list(width = 1, color = 'black'),
+  fill = list(color = 'rgb(235, 100, 230)'),
+  font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(
+      rownames(sample), 
+      t(as.matrix(unname(sample)))
+    ),
+    align = c('left', rep('center', ncol(sample))),
+    line = list(color = "black", width = 1),
+    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+p
+
+```
+
+
+## APIs
+
+Here is our code sample to show the API that we are using to pull the data (Youtube):
+```python
+def helperFinder(VideoId):
+    headers = {'Accept': '*/*',
+               'Accept-Language': 'en-US,en;q=0.8',
+               'Cache-Control': 'max-age=0',
+               'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36',
+               'Connection': 'keep-alive',
+               'Referer': 'http://www.youtube.com/'
+               }
+    key = "<Your Google Youtbue API Key>"
+    helper = "https://www.googleapis.com/youtube/v3/videos?id={}&part=snippet,statistics,recordingDetails&key={}".format(VideoId,key)
+    try:
+        h = urllib.request.urlopen(urllib.request.Request(helper,headers=headers))
+        r = h.read() # r is bytes
+        r = json.loads(r) # r now is a dict
+        print("Success:", VideoId)
+    except urllib.request.HTTPError:
+        flg = False
+        while True:
+            try:
+                h = urllib.request.urlopen(urllib.request.Request(helper,headers=headers))
+                r = h.read() # r is bytes
+                r = json.loads(r) # r now is a dict
+                flg = True
+                break
+            except:
+                pass
+
+        if flg:
+            print("Success:", VideoId)
+        else:
+            print("Failure:", VideoId)
+        return None
+        
+    def findTime():
+        timeStamp = r["items"][0]["snippet"]["publishedAt"]
+        trueTime = timeStamp[0:10]
+        return trueTime
+
+    def findLikeCount():
+        try:
+            likeCount = r["items"][0]["statistics"]["likeCount"]
+        except:
+            likeCount = 0
+        return int(likeCount)
+
+    def findDislikeCount():
+        try:
+            dislikeCount = r["items"][0]["statistics"]["dislikeCount"]
+        except:
+            dislikeCount = 0
+        return int(dislikeCount)
+
+    def findFavoriteCount():
+        try:
+            favoriteCount = r["items"][0]["statistics"]["favoriteCount"]
+        except:
+            favoriteCount = 0
+        return int(favoriteCount)
+
+    def findCommentCount():
+        try:
+            commentCount = r["items"][0]["statistics"]["commentCount"]
+        except:
+            commentCount = -1
+        return int(commentCount)
+
+    return {"VideoId":VideoId,"time":findTime(),"likeCount":findLikeCount(),"dislikeCount":findDislikeCount(),
+           "favorCount":findFavoriteCount(),"commentCount":findCommentCount()}
 
 ```
 
 
 
+
+
+[![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)
 

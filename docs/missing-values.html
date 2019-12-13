@@ -24,7 +24,6 @@
 <meta name="author" content="Kevin Gao (wg2311), Haibo Yu (hy2628)" />
 
 
-<meta name="date" content="2019-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +49,13 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -142,17 +148,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.4</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtbe"><i class="fa fa-check"></i><b>2.1</b> Youtbe</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#video"><i class="fa fa-check"></i><b>2.1.1</b> Video</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtube"><i class="fa fa-check"></i><b>2.1</b> Youtube</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#videos"><i class="fa fa-check"></i><b>2.1.1</b> Videos</a></li>
 <li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#comments"><i class="fa fa-check"></i><b>2.1.2</b> Comments</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="data-sources.html"><a href="data-sources.html#tweets"><i class="fa fa-check"></i><b>2.2.1</b> Tweets</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data-sources.html"><a href="data-sources.html#posts"><i class="fa fa-check"></i><b>2.3.1</b> Posts</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#apis"><i class="fa fa-check"></i><b>2.4</b> APIs</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-pattern-detection"><i class="fa fa-check"></i><b>4.1</b> Missing Pattern Detection</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#missing-data-solution"><i class="fa fa-check"></i><b>4.2</b> Missing Data Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#youtube-1"><i class="fa fa-check"></i><b>5.1</b> Youtube</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#initial-investigation"><i class="fa fa-check"></i><b>5.1.1</b> Initial Investigation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#topic-analysis"><i class="fa fa-check"></i><b>5.1.2</b> Topic Analysis</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#popularity-analysis"><i class="fa fa-check"></i><b>5.1.3</b> Popularity Analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="results.html"><a href="results.html#comment-analysis"><i class="fa fa-check"></i><b>5.1.4</b> Comment Analysis</a></li>
+<li class="chapter" data-level="5.1.5" data-path="results.html"><a href="results.html#demographics"><i class="fa fa-check"></i><b>5.1.5</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#twitter-1"><i class="fa fa-check"></i><b>5.2</b> Twitter</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#tweet-analysis"><i class="fa fa-check"></i><b>5.2.1</b> Tweet Analysis</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#demographics-1"><i class="fa fa-check"></i><b>5.2.2</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#facebook-1"><i class="fa fa-check"></i><b>5.3</b> Facebook</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="results.html"><a href="results.html#post-analysis"><i class="fa fa-check"></i><b>5.3.1</b> Post Analysis</a></li>
+<li class="chapter" data-level="5.3.2" data-path="results.html"><a href="results.html#demographics-2"><i class="fa fa-check"></i><b>5.3.2</b> Demographics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interactive-components.html"><a href="interactive-components.html"><i class="fa fa-check"></i><b>6</b> Interactive Components</a><ul>
+<li class="chapter" data-level="6.1" data-path="interactive-components.html"><a href="interactive-components.html#interactive-choropleth-maps-r-component"><i class="fa fa-check"></i><b>6.1</b> Interactive Choropleth Maps (R Component)</a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-components.html"><a href="interactive-components.html#interactive-social-media-demographics-html-component"><i class="fa fa-check"></i><b>6.2</b> Interactive Social Media Demographics (Html Component)</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="interactive-components.html"><a href="interactive-components.html#social-media-use-over-time"><i class="fa fa-check"></i><b>6.2.1</b> Social media use over time</a></li>
+<li class="chapter" data-level="6.2.2" data-path="interactive-components.html"><a href="interactive-components.html#who-uses-social-media"><i class="fa fa-check"></i><b>6.2.2</b> Who uses social media</a></li>
+<li class="chapter" data-level="6.2.3" data-path="interactive-components.html"><a href="interactive-components.html#which-social-media-platforms-are-most-popular"><i class="fa fa-check"></i><b>6.2.3</b> Which social media platforms are most popular</a></li>
+<li class="chapter" data-level="6.2.4" data-path="interactive-components.html"><a href="interactive-components.html#how-often-americans-use-social-media-sites"><i class="fa fa-check"></i><b>6.2.4</b> How often Americans use social media sites</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -175,7 +213,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="missing-values" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Missing values</h1>
+<p>Due to the scrap API that we are using, and the unstable columbia school network during the final week, there is some data missing from the original result csvs in our first several attempts.</p>
+<p>Then we update the API call, using try-catch to detect the failures (i.e. 403 forbbiden, 401 unauthorized, 404 not found, API daily limitation reached, API quota used up…etc), and set up logics to re-try with waiting durations, so this helps us improve the data integration dramatically.</p>
+<p>And here is how our data looks like during missing pattern check:</p>
+<div id="missing-pattern-detection" class="section level2">
+<h2><span class="header-section-number">4.1</span> Missing Pattern Detection</h2>
+<p>Example for missing data detection (Data from November 2019), since we pulled the data on-demand and cleaned up, there is no missing data in our vidoe csv, as:
+<img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Note: If you are trying to use extracat::visna(sample,sort=“r”), you will get “Error in extracat::visna(df, sort =”r“) : No NA’s in the data. For indicator matrices please use visid(x, … ) and for factor data.frames there is visdf(x,freqvar)”.</p>
+<p>However, when we plot the youtube views per candidate per state, we do see some “missing data” in some states, this is due to the filter we were using when we pulled the original video data, like filter by 1 hour or 1 day, some candidates might have no data in some states, here is the intial plots we did:</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-13-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-13-10.png" width="672" /></p>
+<p>Note: The following regions were missing and are being set to NA: montana, oklahoma, delaware, wyoming, alabama, alaska, idaho, maryland, vermont, utah, kentucky, maine, connecticut, michigan, missouri, oregon, district of columbia, hawaii, illinois, indiana</p>
+</div>
+<div id="missing-data-solution" class="section level2">
+<h2><span class="header-section-number">4.2</span> Missing Data Solution</h2>
+<p>Then we have updated the parameter to expand our filter to a larger duration (1 momth, 1 year) and added re-try logic in the API call (The <a href="data-sources.html#apis">code snippet</a> is shared in Chapter-2.4) to make sure we have pulled enough data per candidate per state, as you can see now from the plots based on the latest data, we don’t have any “missing data” this time!</p>
+<p>Example (Data from December 2019)
+<img src="finalproj_files/figure-html/unnamed-chunk-14-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-14-10.png" width="672" /></p>
+<p><a href="https://github.com/columbia-dsi/SocialMediaElection2020"><img src="imgs/GitHub.png" alt="Github" /></a></p>
 
+</div>
 </div>
             </section>
 

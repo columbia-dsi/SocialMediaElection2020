@@ -24,7 +24,6 @@
 <meta name="author" content="Kevin Gao (wg2311), Haibo Yu (hy2628)" />
 
 
-<meta name="date" content="2019-12-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +31,7 @@
   
   
 <link rel="prev" href="missing-values.html"/>
-<link rel="next" href="interactive-component.html"/>
+<link rel="next" href="interactive-components.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +49,13 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.46.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.46.1/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -142,17 +148,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.4</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data sources</a><ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtbe"><i class="fa fa-check"></i><b>2.1</b> Youtbe</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#video"><i class="fa fa-check"></i><b>2.1.1</b> Video</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#youtube"><i class="fa fa-check"></i><b>2.1</b> Youtube</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="data-sources.html"><a href="data-sources.html#videos"><i class="fa fa-check"></i><b>2.1.1</b> Videos</a></li>
 <li class="chapter" data-level="2.1.2" data-path="data-sources.html"><a href="data-sources.html#comments"><i class="fa fa-check"></i><b>2.1.2</b> Comments</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a></li>
+<li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#twitter"><i class="fa fa-check"></i><b>2.2</b> Twitter</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="data-sources.html"><a href="data-sources.html#tweets"><i class="fa fa-check"></i><b>2.2.1</b> Tweets</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#facebook"><i class="fa fa-check"></i><b>2.3</b> Facebook</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="data-sources.html"><a href="data-sources.html#posts"><i class="fa fa-check"></i><b>2.3.1</b> Posts</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="data-sources.html"><a href="data-sources.html#apis"><i class="fa fa-check"></i><b>2.4</b> APIs</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
-<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a></li>
-<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
-<li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
+<li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a><ul>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#missing-pattern-detection"><i class="fa fa-check"></i><b>4.1</b> Missing Pattern Detection</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#missing-data-solution"><i class="fa fa-check"></i><b>4.2</b> Missing Data Solution</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a><ul>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#youtube-1"><i class="fa fa-check"></i><b>5.1</b> Youtube</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="results.html"><a href="results.html#initial-investigation"><i class="fa fa-check"></i><b>5.1.1</b> Initial Investigation</a></li>
+<li class="chapter" data-level="5.1.2" data-path="results.html"><a href="results.html#topic-analysis"><i class="fa fa-check"></i><b>5.1.2</b> Topic Analysis</a></li>
+<li class="chapter" data-level="5.1.3" data-path="results.html"><a href="results.html#popularity-analysis"><i class="fa fa-check"></i><b>5.1.3</b> Popularity Analysis</a></li>
+<li class="chapter" data-level="5.1.4" data-path="results.html"><a href="results.html#comment-analysis"><i class="fa fa-check"></i><b>5.1.4</b> Comment Analysis</a></li>
+<li class="chapter" data-level="5.1.5" data-path="results.html"><a href="results.html#demographics"><i class="fa fa-check"></i><b>5.1.5</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#twitter-1"><i class="fa fa-check"></i><b>5.2</b> Twitter</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#tweet-analysis"><i class="fa fa-check"></i><b>5.2.1</b> Tweet Analysis</a></li>
+<li class="chapter" data-level="5.2.2" data-path="results.html"><a href="results.html#demographics-1"><i class="fa fa-check"></i><b>5.2.2</b> Demographics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#facebook-1"><i class="fa fa-check"></i><b>5.3</b> Facebook</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="results.html"><a href="results.html#post-analysis"><i class="fa fa-check"></i><b>5.3.1</b> Post Analysis</a></li>
+<li class="chapter" data-level="5.3.2" data-path="results.html"><a href="results.html#demographics-2"><i class="fa fa-check"></i><b>5.3.2</b> Demographics</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="interactive-components.html"><a href="interactive-components.html"><i class="fa fa-check"></i><b>6</b> Interactive Components</a><ul>
+<li class="chapter" data-level="6.1" data-path="interactive-components.html"><a href="interactive-components.html#interactive-choropleth-maps-r-component"><i class="fa fa-check"></i><b>6.1</b> Interactive Choropleth Maps (R Component)</a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-components.html"><a href="interactive-components.html#interactive-social-media-demographics-html-component"><i class="fa fa-check"></i><b>6.2</b> Interactive Social Media Demographics (Html Component)</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="interactive-components.html"><a href="interactive-components.html#social-media-use-over-time"><i class="fa fa-check"></i><b>6.2.1</b> Social media use over time</a></li>
+<li class="chapter" data-level="6.2.2" data-path="interactive-components.html"><a href="interactive-components.html#who-uses-social-media"><i class="fa fa-check"></i><b>6.2.2</b> Who uses social media</a></li>
+<li class="chapter" data-level="6.2.3" data-path="interactive-components.html"><a href="interactive-components.html#which-social-media-platforms-are-most-popular"><i class="fa fa-check"></i><b>6.2.3</b> Which social media platforms are most popular</a></li>
+<li class="chapter" data-level="6.2.4" data-path="interactive-components.html"><a href="interactive-components.html#how-often-americans-use-social-media-sites"><i class="fa fa-check"></i><b>6.2.4</b> How often Americans use social media sites</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -175,7 +213,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="results" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
+<div id="youtube-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Youtube</h2>
+<div id="initial-investigation" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Initial Investigation</h3>
+<p>Here is the result for total views per candiate online:
+<img src="finalproj_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Here is the result for views density per candidate per state:
+<img src="finalproj_files/figure-html/unnamed-chunk-16-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-16-10.png" width="672" /></p>
+<p>From the series of plots using choropleth maps, we can compare:
+a) In each state, which candidate has more popularity online, in terms of views.
+b) For each candidate, in which state he/she has more popularity online, in terms of views.</p>
+</div>
+<div id="topic-analysis" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Topic Analysis</h3>
+<p>Here are word cloud plots for top topics in 2020 presidential election on Youtube:
+<img src="finalproj_files/figure-html/unnamed-chunk-17-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-10.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-17-11.png" width="672" /></p>
+</div>
+<div id="popularity-analysis" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Popularity Analysis</h3>
+<ul>
+<li><p>Here are the core plots for our study to show which candidate are actually more popular online, based on video viewers’ likes and dislikes aggragation:
+<img src="finalproj_files/figure-html/unnamed-chunk-18-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-18-2.png" width="672" /></p></li>
+<li><p>Here are core plots for our study to show which candidate in which state are actually more popular online, based on video viewers’ likes and dislikes aggragation:
+<img src="finalproj_files/figure-html/unnamed-chunk-19-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-19-10.png" width="672" /></p></li>
+</ul>
+</div>
+<div id="comment-analysis" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Comment Analysis</h3>
+<p>Here are word cloud for comments per candidate on Youtube:
+<img src="finalproj_files/figure-html/unnamed-chunk-20-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-20-10.png" width="672" /></p>
+<ul>
+<li>Here is one of the core plots for our study to show the total diverging sentiment score per candidate on Youtube:
+<img src="finalproj_files/figure-html/unnamed-chunk-21-1.png" width="672" /></li>
+</ul>
+</div>
+<div id="demographics" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Demographics</h3>
+<div class="figure">
+<img src="imgs/youtube_1.png" alt="Credit:castfromclay.co.uk" />
+<p class="caption">Credit:castfromclay.co.uk</p>
+</div>
+</div>
+</div>
+<div id="twitter-1" class="section level2">
+<h2><span class="header-section-number">5.2</span> Twitter</h2>
+<div id="tweet-analysis" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Tweet Analysis</h3>
+<p>Here are word cloud plots for top topics in 2020 presidential election on Twitter: (Bonus viz on “twitter president”)</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-22-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-10.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-22-11.png" width="672" /></p>
+<ul>
+<li>Here is one of the core plots for our study to show the total diverging sentiment score per candidate on Twitter:
+<img src="finalproj_files/figure-html/unnamed-chunk-23-1.png" width="672" /></li>
+</ul>
+</div>
+<div id="demographics-1" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Demographics</h3>
+<div class="figure">
+<img src="imgs/twitter_1.png" alt="Credit:castfromclay.co.uk" />
+<p class="caption">Credit:castfromclay.co.uk</p>
+</div>
+</div>
+</div>
+<div id="facebook-1" class="section level2">
+<h2><span class="header-section-number">5.3</span> Facebook</h2>
+<div id="post-analysis" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Post Analysis</h3>
+<p>Here are word cloud for posts per candidate on Facebook:
+<img src="finalproj_files/figure-html/unnamed-chunk-24-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-3.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-4.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-5.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-6.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-7.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-8.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-9.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-10.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-24-11.png" width="672" /></p>
+<ul>
+<li>Here is one of the core plots for our study to show the total sentiment score per candidate on Facebook:
+<img src="finalproj_files/figure-html/unnamed-chunk-25-1.png" width="672" /></li>
+</ul>
+</div>
+<div id="demographics-2" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Demographics</h3>
+<div class="figure">
+<img src="imgs/fb_1.png" alt="Credit:castfromclay.co.uk" />
+<p class="caption">Credit:castfromclay.co.uk</p>
+</div>
+<p>(Please note: We have more demographics analysis in Chapter-6, as interactive components.)</p>
+<p><a href="https://github.com/columbia-dsi/SocialMediaElection2020"><img src="imgs/GitHub.png" alt="Github" /></a></p>
 
+</div>
+</div>
 </div>
             </section>
 
@@ -183,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="missing-values.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="interactive-component.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="interactive-components.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

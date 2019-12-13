@@ -1,7 +1,9 @@
 ---
 title: "EDAV Fall 2019 Final Project: Understanding 2020 Presidential Polls from Social Media Perspective"
 author: "Kevin Gao (wg2311), Haibo Yu (hy2628)"
-output: html_document
+output: 
+  html_document:
+    code_folding: hide
 ---
 ```{r, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)
@@ -128,7 +130,6 @@ df2 <- read.csv("2019-12-12.csv")
 
 
 df <- filter(df, candidate != "Donald Trump") 
-
 
 df2 <- filter(df2, candidate != "Donald Trump")
 
