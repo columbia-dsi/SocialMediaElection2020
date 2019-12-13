@@ -7,16 +7,18 @@ This is the source code base for the EDAV final project, powered by R bookdown.
 
 ### Background
 
-TEST.
+The use of social media in politics including Twitter, Facebook, and YouTube has dramatically changed the way campaigns are run and how Americans interact with their elected officials. The prevalence of social media in politics has made elected officials and candidates more accountable and accessible to voters.
+
+Thus we teke a look at social media data and analyze with demographics data collected online to help us understand 2020 Presidential Polls.
 
 ### Approaches
 
 
-- 1. TEST.
+- 1. Youtubue Data Analysis.
 
-- 2. TEST.
+- 2. Twitter Data Analysis.
 
-- 3. TEST.
+- 3. Face Data Analysis.
 
 ### Quick Start
 
@@ -31,7 +33,4 @@ TEST.
 - 5. If it looks good, commit and push all changed files to GitHub. 
 
 (You will need to repeat steps 2 and 4 every time you wish to update the book online.)
-
-
-### Credits
 

@@ -38,7 +38,7 @@ A study done by the Pew Internet & American Life Project in conjunction with Pri
 With huge impact from often biased media, general public is often mislead by the media, and then we start to see suprises after elections.
  
 The presidency of Donald Trump began at noon EST on January 20, 2017, Among the 44 persons who have served as president, only Donald Trump had never held a position in either government or the military prior to taking office.
-
+instal
 In contrast to the 2016 presidential election, where social media was a novelty, the candidates for election in 2020 had carefully managed social media strategies.
 
 
@@ -90,7 +90,7 @@ d) Who is more concentrating on what topics ?
 
 e) Who is more popular in near future ?
 
-f) Is our result correlating to the final election result in December ?
+f) Is our result correlating to the final election result ?
 
 
 ## References

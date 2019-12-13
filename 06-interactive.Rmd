@@ -9,41 +9,33 @@ output:
 ## Interactive Choropleth Maps (R Component)
 
 * Here are core plots for our study to show which candidate in which state are actually more popular online, based on video viewers' likes and dislikes aggragation, so we decided to make it interactive for the users:
-```{r, warning=FALSE, echo=FALSE}
+
+<video width="700" height="500" controls>
+  <source src="data/InteractivePlotVideo.mp4" type="video/mp4">
+</video>
+
+(Video captured, feel free to checkout the source code below:)
+
+```r
 library(tidyverse)
 library(dplyr)
 library(choroplethr)
 library(ggplot2)
 library(plotly)
-
 # load social meida data - Youtube, from 12/12/2019:
 df2 <- read.csv("data/2019-12-12.csv")
-
 df2 <- filter(df2, candidate != "Donald Trump")
-
 df2 <- filter(df2, title!="2020 Democratic Debate - SNL")  # remove irrelated videos
-
 df2 <- filter(df2, title!="DNC Town Hall - SNL")  # remove irrelated videos
-
 df2 <- filter(df2, title!="2020 November Democratic Debate in Atlanta | The Daily Show")  # remove irrelated videos
-
 df2 <- filter(df2, title!="2020 October Democratic Debate in Ohio | The Daily Show")  # remove irrelated videos
-
 df2 <- filter(df2, title!="Stephen Colbert Breaks Down The 5th Democratic Presidential Debate")  # remove irrelated videos
-
 df2 <- filter(df2, title!="Democratic candidates debate: Opening statements l ABC News")  # remove irrelated videos
-
 df2 <- filter(df2, title!="I'm Gay - Eugene Lee Yang")  # remove irrelated videos
-
 df2 <- filter(df2, title!="Mark Morrison - Return Of The Mack [OFFICIAL MUSIC VIDEO]")  # remove irrelated videos
-
 df2 <- filter(df2, title!="Kavanaugh Hearing Cold Open - SNL")  # remove irrelated videos
-
 df2 <- filter(df2, title!="THE CONJURING - The Real Lorraine Warren Featurette")  # remove irrelated videos
-
-
 candidates <- c('Amy Klobuchar','Andrew Yang','Bernie Sanders','Cory Booker','Elizabeth Warren','Joe Biden','Kamala Harris','Pete Buttigieg','Tom Steyer','Tulsi Gabbard') 
-
 for(i in candidates) {
   # i-th name of candiates
   # ------------------------------------------------------
@@ -59,7 +51,6 @@ for(i in candidates) {
     summarise(value = sum(value), like=sum(like), dislike=sum(dislike))
   
   temp <- na.omit(temp)
-
   temp$hover <- with(temp, paste(region, '<br>', 'Value', value, '<br>','Like',like,'<br>', 'Dislike',dislike))
   # give state boundaries a white border
   l <- list(color = toRGB("#ece3fc"), width = 5)
@@ -81,12 +72,9 @@ for(i in candidates) {
       title = paste(i," - Youtube Likes by State<br>(Hover for breakdown)"),
       geo = g
     )
-
   print(p)
   # ------------------------------------------------------
 }
-
-
 ```
 
 
@@ -96,22 +84,22 @@ for(i in candidates) {
 
 ### Social media use over time
 
-<iframe src='https://www.pewresearch.org/internet/chart/social-media-use/iframe/' id='pew17380' scrolling='no' width='100%' height='100px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17380')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>			
+<iframe src='https://www.pewresearch.org/internet/chart/social-media-use/iframe/' id='pew17380' scrolling='no' width='100%' height='600px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17380')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>			
 
 
 
 ### Who uses social media
 
-<iframe src='https://www.pewresearch.org/internet/chart/social-media-use-by-community-type/iframe/' id='pew17895' scrolling='no' width='100%' height='100px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17895')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>			
+<iframe src='https://www.pewresearch.org/internet/chart/social-media-use-by-community-type/iframe/' id='pew17895' scrolling='no' width='100%' height='600px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17895')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>			
 
 
 ### Which social media platforms are most popular
 
-<iframe src='https://www.pewresearch.org/internet/chart/which-social-media-platforms-are-most-popular/iframe/' id='pew17383' scrolling='no' width='100%' height='100px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17383')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>		
+<iframe src='https://www.pewresearch.org/internet/chart/which-social-media-platforms-are-most-popular/iframe/' id='pew17383' scrolling='no' width='100%' height='600px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17383')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>		
 
 ### How often Americans use social media sites
 
-<iframe src='https://www.pewresearch.org/internet/chart/how-often-americans-are-using-social-media/iframe/' id='pew17381' scrolling='no' width='100%' height='100px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17381')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>	
+<iframe src='https://www.pewresearch.org/internet/chart/how-often-americans-are-using-social-media/iframe/' id='pew17381' scrolling='no' width='100%' height='600px' frameborder='0'></iframe> <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17381')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>	
 
 
 

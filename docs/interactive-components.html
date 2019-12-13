@@ -218,31 +218,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Here are core plots for our study to show which candidate in which state are actually more popular online, based on video viewers’ likes and dislikes aggragation, so we decided to make it interactive for the users:</li>
 </ul>
+<video width="700" height="500" controls>
+<source src="data/InteractivePlotVideo.mp4" type="video/mp4">
+</video>
+<p>(Video captured, feel free to checkout the source code below:)</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">library</span>(choroplethr)</a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="kw">library</span>(plotly)</a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co"># load social meida data - Youtube, from 12/12/2019:</span></a>
+<a class="sourceLine" id="cb5-7" title="7">df2 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/2019-12-12.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb5-8" title="8">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, candidate <span class="op">!=</span><span class="st"> &quot;Donald Trump&quot;</span>)</a>
+<a class="sourceLine" id="cb5-9" title="9">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;2020 Democratic Debate - SNL&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-10" title="10">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;DNC Town Hall - SNL&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-11" title="11">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;2020 November Democratic Debate in Atlanta | The Daily Show&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-12" title="12">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;2020 October Democratic Debate in Ohio | The Daily Show&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-13" title="13">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;Stephen Colbert Breaks Down The 5th Democratic Presidential Debate&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-14" title="14">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;Democratic candidates debate: Opening statements l ABC News&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-15" title="15">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;I&#39;m Gay - Eugene Lee Yang&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-16" title="16">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;Mark Morrison - Return Of The Mack [OFFICIAL MUSIC VIDEO]&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-17" title="17">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;Kavanaugh Hearing Cold Open - SNL&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-18" title="18">df2 &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, title<span class="op">!=</span><span class="st">&quot;THE CONJURING - The Real Lorraine Warren Featurette&quot;</span>)  <span class="co"># remove irrelated videos</span></a>
+<a class="sourceLine" id="cb5-19" title="19">candidates &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Amy Klobuchar&#39;</span>,<span class="st">&#39;Andrew Yang&#39;</span>,<span class="st">&#39;Bernie Sanders&#39;</span>,<span class="st">&#39;Cory Booker&#39;</span>,<span class="st">&#39;Elizabeth Warren&#39;</span>,<span class="st">&#39;Joe Biden&#39;</span>,<span class="st">&#39;Kamala Harris&#39;</span>,<span class="st">&#39;Pete Buttigieg&#39;</span>,<span class="st">&#39;Tom Steyer&#39;</span>,<span class="st">&#39;Tulsi Gabbard&#39;</span>) </a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="cf">for</span>(i <span class="cf">in</span> candidates) {</a>
+<a class="sourceLine" id="cb5-21" title="21">  <span class="co"># i-th name of candiates</span></a>
+<a class="sourceLine" id="cb5-22" title="22">  <span class="co"># ------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb5-23" title="23">  temp &lt;-<span class="st"> </span><span class="kw">filter</span>(df2, candidate <span class="op">==</span><span class="st"> </span>i) </a>
+<a class="sourceLine" id="cb5-24" title="24">  </a>
+<a class="sourceLine" id="cb5-25" title="25">  temp &lt;-<span class="st"> </span>temp <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-26" title="26"><span class="st">    </span><span class="kw">as.data.frame</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-27" title="27"><span class="st">    </span><span class="kw">transmute</span>(<span class="dt">region =</span> state, <span class="dt">value =</span> (<span class="kw">as.numeric</span>(temp<span class="op">$</span>like)<span class="op">-</span><span class="kw">as.numeric</span>(temp<span class="op">$</span>dislike)), <span class="dt">like=</span>like, <span class="dt">dislike=</span>dislike)</a>
+<a class="sourceLine" id="cb5-28" title="28">  <span class="co"># unique(df$region)  45 states</span></a>
+<a class="sourceLine" id="cb5-29" title="29">  </a>
+<a class="sourceLine" id="cb5-30" title="30">  temp &lt;-<span class="st"> </span>temp <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-31" title="31"><span class="st">    </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-32" title="32"><span class="st">    </span><span class="kw">summarise</span>(<span class="dt">value =</span> <span class="kw">sum</span>(value), <span class="dt">like=</span><span class="kw">sum</span>(like), <span class="dt">dislike=</span><span class="kw">sum</span>(dislike))</a>
+<a class="sourceLine" id="cb5-33" title="33">  </a>
+<a class="sourceLine" id="cb5-34" title="34">  temp &lt;-<span class="st"> </span><span class="kw">na.omit</span>(temp)</a>
+<a class="sourceLine" id="cb5-35" title="35">  temp<span class="op">$</span>hover &lt;-<span class="st"> </span><span class="kw">with</span>(temp, <span class="kw">paste</span>(region, <span class="st">&#39;&lt;br&gt;&#39;</span>, <span class="st">&#39;Value&#39;</span>, value, <span class="st">&#39;&lt;br&gt;&#39;</span>,<span class="st">&#39;Like&#39;</span>,like,<span class="st">&#39;&lt;br&gt;&#39;</span>, <span class="st">&#39;Dislike&#39;</span>,dislike))</a>
+<a class="sourceLine" id="cb5-36" title="36">  <span class="co"># give state boundaries a white border</span></a>
+<a class="sourceLine" id="cb5-37" title="37">  l &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">color =</span> <span class="kw">toRGB</span>(<span class="st">&quot;#ece3fc&quot;</span>), <span class="dt">width =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb5-38" title="38">  <span class="co"># specify some map projection/options</span></a>
+<a class="sourceLine" id="cb5-39" title="39">  g &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb5-40" title="40">    <span class="dt">scope =</span> <span class="st">&#39;usa&#39;</span>,</a>
+<a class="sourceLine" id="cb5-41" title="41">    <span class="dt">projection =</span> <span class="kw">list</span>(<span class="dt">type =</span> <span class="st">&#39;albers usa&#39;</span>),</a>
+<a class="sourceLine" id="cb5-42" title="42">    <span class="dt">showlakes =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb5-43" title="43">    <span class="dt">lakecolor =</span> <span class="kw">toRGB</span>(<span class="st">&#39;#ece3fc&#39;</span>)</a>
+<a class="sourceLine" id="cb5-44" title="44">  )</a>
+<a class="sourceLine" id="cb5-45" title="45">  </a>
+<a class="sourceLine" id="cb5-46" title="46">  p &lt;-<span class="st"> </span><span class="kw">plot_geo</span>(temp, <span class="dt">locationmode =</span> <span class="st">&#39;USA-states&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-47" title="47"><span class="st">    </span><span class="kw">add_trace</span>(</a>
+<a class="sourceLine" id="cb5-48" title="48">      <span class="dt">z =</span> <span class="op">~</span>value, <span class="dt">text =</span> <span class="op">~</span>hover, <span class="dt">locations =</span> <span class="op">~</span>state.abb[<span class="kw">which</span>(state.name <span class="op">==</span><span class="st"> </span>region)],</a>
+<a class="sourceLine" id="cb5-49" title="49">      <span class="dt">color =</span> <span class="op">~</span>value, <span class="dt">colors =</span> <span class="st">&#39;Purples&#39;</span></a>
+<a class="sourceLine" id="cb5-50" title="50">    ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-51" title="51"><span class="st">    </span><span class="kw">colorbar</span>(<span class="dt">title =</span> <span class="st">&quot;Like Count&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-52" title="52"><span class="st">    </span><span class="kw">layout</span>(</a>
+<a class="sourceLine" id="cb5-53" title="53">      <span class="dt">title =</span> <span class="kw">paste</span>(i,<span class="st">&quot; - Youtube Likes by State&lt;br&gt;(Hover for breakdown)&quot;</span>),</a>
+<a class="sourceLine" id="cb5-54" title="54">      <span class="dt">geo =</span> g</a>
+<a class="sourceLine" id="cb5-55" title="55">    )</a>
+<a class="sourceLine" id="cb5-56" title="56">  <span class="kw">print</span>(p)</a>
+<a class="sourceLine" id="cb5-57" title="57">  <span class="co"># ------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb5-58" title="58">}</a></code></pre></div>
 </div>
 <div id="interactive-social-media-demographics-html-component" class="section level2">
 <h2><span class="header-section-number">6.2</span> Interactive Social Media Demographics (Html Component)</h2>
 <p>(credit: Pew Research Center)</p>
 <div id="social-media-use-over-time" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Social media use over time</h3>
-<iframe src="https://www.pewresearch.org/internet/chart/social-media-use/iframe/" id="pew17380" scrolling="no" width="100%" height="100px" frameborder="0">
+<iframe src="https://www.pewresearch.org/internet/chart/social-media-use/iframe/" id="pew17380" scrolling="no" width="100%" height="600px" frameborder="0">
 </iframe>
 <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17380')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
 </div>
 <div id="who-uses-social-media" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> Who uses social media</h3>
-<iframe src="https://www.pewresearch.org/internet/chart/social-media-use-by-community-type/iframe/" id="pew17895" scrolling="no" width="100%" height="100px" frameborder="0">
+<iframe src="https://www.pewresearch.org/internet/chart/social-media-use-by-community-type/iframe/" id="pew17895" scrolling="no" width="100%" height="600px" frameborder="0">
 </iframe>
 <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17895')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
 </div>
 <div id="which-social-media-platforms-are-most-popular" class="section level3">
 <h3><span class="header-section-number">6.2.3</span> Which social media platforms are most popular</h3>
-<iframe src="https://www.pewresearch.org/internet/chart/which-social-media-platforms-are-most-popular/iframe/" id="pew17383" scrolling="no" width="100%" height="100px" frameborder="0">
+<iframe src="https://www.pewresearch.org/internet/chart/which-social-media-platforms-are-most-popular/iframe/" id="pew17383" scrolling="no" width="100%" height="600px" frameborder="0">
 </iframe>
 <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17383')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
 </div>
 <div id="how-often-americans-use-social-media-sites" class="section level3">
 <h3><span class="header-section-number">6.2.4</span> How often Americans use social media sites</h3>
-<iframe src="https://www.pewresearch.org/internet/chart/how-often-americans-are-using-social-media/iframe/" id="pew17381" scrolling="no" width="100%" height="100px" frameborder="0">
+<iframe src="https://www.pewresearch.org/internet/chart/how-often-americans-are-using-social-media/iframe/" id="pew17381" scrolling="no" width="100%" height="600px" frameborder="0">
 </iframe>
 <script type='text/javascript'id='pew-iframe'>(function(){function async_load(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://www.pewresearch.org/internet/wp-content/plugins/pew-refactor-shim/pew-scripts/js/iframeResizer.min.js';s.onload=s.onreadystatechange=function(){var rs=this.readyState;try{iFrameResize([],'iframe#pew17381')}catch(e){}};var embedder=document.getElementById('pew-iframe');embedder.parentNode.insertBefore(s,embedder)}if(window.attachEvent)window.attachEvent('onload',async_load);else window.addEventListener('load',async_load,false)})();</script>
 <p><a href="https://github.com/columbia-dsi/SocialMediaElection2020"><img src="imgs/GitHub.png" alt="Github" /></a></p>

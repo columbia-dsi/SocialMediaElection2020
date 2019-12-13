@@ -5,7 +5,9 @@ output:
     code_folding: hide
 ---
 # Data sources
-
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)
+```
 We conduct study around 3 social meida platform: Youtube, Twiter, Facebook.
 Our data source is original, collected from social meida networks, including youtube, facebook, twitter.
 
