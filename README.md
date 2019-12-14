@@ -10,7 +10,9 @@ This is the source code base for the EDAV final project, powered by R bookdown.
 
 The use of social media in politics including Twitter, Facebook, and YouTube has dramatically changed the way campaigns are run and how Americans interact with their elected officials. The prevalence of social media in politics has made elected officials and candidates more accountable and accessible to voters.
 
-Every adult citizen can vote and every vote counts, the question is: who will be the collaborative decision in this world of divergent?
+
+Every adult citizen can vote and every vote counts, the question is: who will be the chosen one by the collective decision in this world of divergent?
+
 
 Thus, We take a close look at social media data and analyze with demographics data collected online to help us understand 2020 Presidential Polls. Finally, our latest study unveils how social media diverges from presidential election polls.
 
