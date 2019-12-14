@@ -12,7 +12,7 @@ output:
 
 The use of social media in politics including Twitter, Facebook, and YouTube has dramatically changed the way campaigns are run and how Americans interact with their elected officials. The prevalence of social media in politics has made elected officials and candidates more accountable and accessible to voters.
 
-From our close look at social media data and analyze with demographics data collected online, we can infer those insights towards 2020 presidential election:
+From our close look at social media data and analyze with demographics data collected online, and the study on U.S. social media usage, we focus on Youtube as it's a main streaming channel for general public, and we feel pretty confident that the data represents general public behavrios onilne and coverages to some solid results, now we would like to share those insights from our study towards 2020 presidential election:
 
 
 
@@ -53,9 +53,22 @@ From our close look at social media data and analyze with demographics data coll
 
 
 
+![Final Dashboard](imgs/final-dashboard.png)
 
-Hope these social media data analysis can help you understand better about 2020 Presidential Polls, feel free to send feedbacks, and don't forget to vote!
+Finally, our latest study unveils how social media diverges from presidential election polls.
 
+Now compare our core plots to the latest 2020 Presidential polls, in a modern society: social media vs. the real world, do you have a better understanding of it? Or do you have another angle to review the biased media results? 
+
+Hope these social media data analysis can help you understand better about 2020 Presidential Polls, feel free to send feedbacks, and don't forget to vote! 
+
+
+![Latest 2020 Presidential polls - Credit: isidewith.com](imgs/poll-2020.png)
+
+
+
+Future thoughts
+
+If we have the voting power data for social media users (i.e. Youtube viewers who can actually vote), we could possible dig into further study about how much the social media results and polls are biased in their disagreement. And is there statistically significant different enough to reject the null hypothesis of media bias.  
 
 
 
@@ -85,4 +98,6 @@ References
 
 
 
+<center>
 [![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)
+</center>

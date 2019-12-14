@@ -282,5 +282,7 @@ def helperFinder(VideoId):
 
 
 
+<center>
 [![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)
+</center>
 

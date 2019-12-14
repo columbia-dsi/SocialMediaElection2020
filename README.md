@@ -5,11 +5,15 @@ This is the source code base for the EDAV final project, powered by R bookdown.
 
 *EDAV Fall 2019 Final Project: Understanding 2020 Presidential Polls from Social Media Perspective.*
 
+
 ### Background
 
 The use of social media in politics including Twitter, Facebook, and YouTube has dramatically changed the way campaigns are run and how Americans interact with their elected officials. The prevalence of social media in politics has made elected officials and candidates more accountable and accessible to voters.
 
-Thus we teke a look at social media data and analyze with demographics data collected online to help us understand 2020 Presidential Polls.
+Every adult citizen can vote and every vote counts, the question is: who will be the collaborative decision in this world of divergent?
+
+Thus, We take a close look at social media data and analyze with demographics data collected online to help us understand 2020 Presidential Polls. Finally, our latest study unveils how social media diverges from presidential election polls.
+
 
 ### Approaches
 
@@ -19,6 +23,7 @@ Thus we teke a look at social media data and analyze with demographics data coll
 - 2. Twitter Data Analysis.
 
 - 3. Face Data Analysis.
+
 
 ### Quick Start
 
@@ -30,7 +35,7 @@ Thus we teke a look at social media data and analyze with demographics data coll
 
 - 4. Use `browseURL("docs/index.html")` to view your book locally (or just open `index.html` in a browser).
 
-- 5. If it looks good, commit and push all changed files to GitHub. 
+### Dashboard
 
-(You will need to repeat steps 2 and 4 every time you wish to update the book online.)
 
+![Final Project Dashboard](imgs/final-dashboard.png?raw=true "Final Project Dashboard")

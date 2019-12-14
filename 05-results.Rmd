@@ -200,7 +200,7 @@ temp <-
 
 
 HH::likert(candidate ~ ., temp, xlab = 'Percent',
-           main = list('Diverage Candidate\'s Popularity - Absolute Value', cex = 0.7), positive.order = T, col=c('#6f8df7','#f582ae'))
+           main = list('Youtube Diverage Candidate\'s Popularity - Absolute Value', cex = 0.7), positive.order = T, col=c('#6f8df7','#f582ae'))
 
 
 temp2 <- 
@@ -210,7 +210,7 @@ temp2 <-
 
 
 HH::likert(candidate ~ ., temp2, xlab = 'Percent',
-           main = list('Diverage Candidate\'s Popularity - Percentage', cex = 0.7), positive.order = T, col=c('#6f8df7','#f582ae'))
+           main = list('Youtube Diverage Candidate\'s Popularity - Percentage', cex = 0.7), positive.order = T, col=c('#6f8df7','#f582ae'))
 
 ```
 
@@ -364,7 +364,7 @@ ggplot(df_merge, aes(x = reorder(candidates, sentiment), y=sentiment)) +
   geom_bar(stat="identity", fill=c('#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#6f8df7','#f582ae','#f582ae','#f582ae')) +
   xlab("Candidate Name") +
   ylab("Sentiment Score") +
-  ggtitle("Total Sentiment Score (Positive: Red, Negative: Blue)") +
+  ggtitle("Youtube Total Sentiment Score (Positive: Red, Negative: Blue)") +
   coord_flip()
 
 ```
@@ -446,7 +446,7 @@ ggplot(df_merge, aes(x = reorder(candidates, sentiment), y=sentiment)) +
   geom_bar(stat="identity", fill=c('#6f8df7','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#6f8df7','#f582ae','#6f8df7','#f582ae')) +
   xlab("Candidate Name") +
   ylab("Sentiment Score") +
-  ggtitle("Total Sentiment Score (Positive: Red, Negative: Blue)") +
+  ggtitle("Twitter Total Sentiment Score (Positive: Red, Negative: Blue)") +
   coord_flip()
 
 ```
@@ -535,7 +535,7 @@ ggplot(df_merge, aes(x = reorder(candidates, sentiment), y=sentiment)) +
   geom_bar(stat="identity", fill=c('#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae','#f582ae')) +
   xlab("Candidate Name") +
   ylab("Sentiment Score") +
-  ggtitle("Total Sentiment Score") +
+  ggtitle("Facebook Total Sentiment Score") +
   coord_flip()
 
 
@@ -552,4 +552,6 @@ ggplot(df_merge, aes(x = reorder(candidates, sentiment), y=sentiment)) +
 
 
 
+<center>
 [![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)
+</center>

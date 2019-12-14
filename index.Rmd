@@ -1,11 +1,13 @@
 --- 
 title: "Understanding 2020 Presidential Polls from Social Media Perspective"
-author: "Kevin Gao (wg2311), Haibo Yu (hy2628)"
+author: "Kevin Gao ([wg2311](mailto:wg2311@columbia.edu)), Haibo Yu ([hy2628](mailto:hy2628@columbia.edu))"
 date:  "`r format(Sys.Date(), '%B, %Y')`"
 site: bookdown::bookdown_site
 ---
 
 # Introduction
+
+Welcome to our project!
 
 ## Background
 
@@ -13,7 +15,7 @@ The election of the president and the vice president of the United States is an 
 
 Every once a while, the election will impact the U.S. in many aspects, such as job experience, income taxes, government investments and  since U.S. plays a key role in golabal econemy, it cerntianly drive attention from every tax payer.
 
-Every citizen can vote and every vote counts.
+Every adult citizen can vote and every vote counts, the question is: who will be the collaborative decision in this world of divergent?
 
 ![Vote America - Credit: Bing Images](imgs/vote.png)
 
@@ -42,20 +44,24 @@ instal
 In contrast to the 2016 presidential election, where social media was a novelty, the candidates for election in 2020 had carefully managed social media strategies.
 
 
-With the concerns of all those mysterious, we start a study using social media data to analyze current dem candidates status, and help people to understand the 2020 presidential polls.
-
-We use social media like youtube, twitter, facebook to address the impact of social media in the 2020 United States presidential election.
-
-
 ![Social Media Election - Credit: Bing Images](imgs/social-media-presidential-election.png)
 
 ## Project
 
+
+With the concerns of all those mysterious, when we try to do some research online to understand these candidates policy and who they are, we usually enter a news media website,watch on TV programs, or go on social media like Youtbue to watch all content from candidate, their campaign and their followers, or go on facebook to chat with your friends, or share tweets about this between your network on Twitter... All those learning process gives me some idea: What if peoole has no opinion in the begining and while trying to understand the politics and searching online, they are influenced by all the content they have consume? And if that would ever affect their decision later in the polls? And can we find the connection using statistic model between the media behaviors and polling behavrios to test our hypothesis? 
+
+So we start a study using social media data to analyze current democrat candidates status, and help people to understand the 2020 presidential polls.
+
+We use social media like youtube, twitter, facebook to address the impact of social media in the 2020 United States presidential election.
+
+
+
 ### The Team
 
-Haibo Yu - hy2628
+Haibo Yu (M.s. in Data Science, DSI, Columbia University)
 
-Kevin Gao - wg2311
+Kevin Gao (M.s. in Data Science, DSI, Columbia University)
 
 ### The Plan
 
@@ -103,6 +109,6 @@ f) Is our result correlating to the final election result ?
 
 
 
-
+<center>
 [![Github](imgs/GitHub.png)](https://github.com/columbia-dsi/SocialMediaElection2020)
-
+</center>
