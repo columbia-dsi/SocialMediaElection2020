@@ -8,75 +8,17 @@ output:
 
 ## Interactive Choropleth Maps (R Component)
 
-* Here are core plots for our study to show which candidate in which state are actually more popular online, based on video viewers' likes and dislikes aggragation, so we decided to make it interactive for the users:
+* Here are core plots for our study to show which candidate in which state are actually more popular online, based on video viewers' likes and dislikes aggragation, so we decided to make it interactive for the users (Deployed plotly in Shinny App):
 
-<video width="700" height="500" controls>
-  <source src="data/InteractivePlotVideo.mp4" type="video/mp4">
-</video>
+<iframe src = "https://kgao.shinyapps.io/EDAV-Candidate-Geoplot/" height=700px width=700px />
 
-(Video captured, feel free to checkout the source code below:)
+* Instruction:
 
-```r
-library(tidyverse)
-library(dplyr)
-library(choroplethr)
-library(ggplot2)
-library(plotly)
-# load social meida data - Youtube, from 12/12/2019:
-df2 <- read.csv("data/2019-12-12.csv")
-df2 <- filter(df2, candidate != "Donald Trump")
-df2 <- filter(df2, title!="2020 Democratic Debate - SNL")  # remove irrelated videos
-df2 <- filter(df2, title!="DNC Town Hall - SNL")  # remove irrelated videos
-df2 <- filter(df2, title!="2020 November Democratic Debate in Atlanta | The Daily Show")  # remove irrelated videos
-df2 <- filter(df2, title!="2020 October Democratic Debate in Ohio | The Daily Show")  # remove irrelated videos
-df2 <- filter(df2, title!="Stephen Colbert Breaks Down The 5th Democratic Presidential Debate")  # remove irrelated videos
-df2 <- filter(df2, title!="Democratic candidates debate: Opening statements l ABC News")  # remove irrelated videos
-df2 <- filter(df2, title!="I'm Gay - Eugene Lee Yang")  # remove irrelated videos
-df2 <- filter(df2, title!="Mark Morrison - Return Of The Mack [OFFICIAL MUSIC VIDEO]")  # remove irrelated videos
-df2 <- filter(df2, title!="Kavanaugh Hearing Cold Open - SNL")  # remove irrelated videos
-df2 <- filter(df2, title!="THE CONJURING - The Real Lorraine Warren Featurette")  # remove irrelated videos
-candidates <- c('Amy Klobuchar','Andrew Yang','Bernie Sanders','Cory Booker','Elizabeth Warren','Joe Biden','Kamala Harris','Pete Buttigieg','Tom Steyer','Tulsi Gabbard') 
-for(i in candidates) {
-  # i-th name of candiates
-  # ------------------------------------------------------
-  temp <- filter(df2, candidate == i) 
-  
-  temp <- temp %>% 
-    as.data.frame() %>% 
-    transmute(region = state, value = (as.numeric(temp$like)-as.numeric(temp$dislike)), like=like, dislike=dislike)
-  # unique(df$region)  45 states
-  
-  temp <- temp %>%
-    group_by(region) %>%
-    summarise(value = sum(value), like=sum(like), dislike=sum(dislike))
-  
-  temp <- na.omit(temp)
-  temp$hover <- with(temp, paste(region, '<br>', 'Value', value, '<br>','Like',like,'<br>', 'Dislike',dislike))
-  # give state boundaries a white border
-  l <- list(color = toRGB("#ece3fc"), width = 5)
-  # specify some map projection/options
-  g <- list(
-    scope = 'usa',
-    projection = list(type = 'albers usa'),
-    showlakes = TRUE,
-    lakecolor = toRGB('#ece3fc')
-  )
-  
-  p <- plot_geo(temp, locationmode = 'USA-states') %>%
-    add_trace(
-      z = ~value, text = ~hover, locations = ~state.abb[which(state.name == region)],
-      color = ~value, colors = 'Purples'
-    ) %>%
-    colorbar(title = "Like Count") %>%
-    layout(
-      title = paste(i," - Youtube Likes by State<br>(Hover for breakdown)"),
-      geo = g
-    )
-  print(p)
-  # ------------------------------------------------------
-}
-```
-
+<div width="700" height="500">
+  <video width="700" height="500" controls>
+    <source src="data/InteractivePlotVideo.mp4" type="video/mp4">
+  </video>
+</div>
 
 ## Interactive Social Media Demographics (Html Component)
 
