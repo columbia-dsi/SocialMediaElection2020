@@ -1,6 +1,6 @@
 --- 
 title: "Understanding 2020 Presidential Polls from Social Media Perspective"
-author: "Kevin Gao ([wg2311](mailto:wg2311@columbia.edu)), Haibo Yu ([hy2628](mailto:hy2628@columbia.edu))"
+author: "Kevin Gao '@hb123boy' ([wg2311](mailto:wg2311@columbia.edu)), Haibo Yu '@haiboyu4' ([hy2628](mailto:hy2628@columbia.edu))"
 date:  "`r format(Sys.Date(), '%B, %Y')`"
 site: bookdown::bookdown_site
 ---
@@ -19,7 +19,7 @@ Every adult citizen can vote and every vote counts, the question is: who will be
 
 ![Vote America - Credit: Bing Images](imgs/vote.png)
 
-And, does every individual knows enough about the candidates that he/she has to choose from?
+And, does every individual know enough about the candidates that he/she has to choose from?
 
 ![Candidats - Credit: Bing Images](imgs/candidates.jpg)
 
@@ -31,16 +31,14 @@ A key part of the United States presidential campaigns is the use of media and f
 
 Advances in technology and media have also affected presidential campaigns. Since the development of the internet in the mid-90s, Internet activism has also become an invaluable component of presidential campaigns, especially since 2000. 
 
-In 2008, the internet became a grassroots and a voice of the people tool. A study done by the Pew Internet & American Life Project in conjunction with Princeton Survey Research Associates in November 2010 shows that 54 percent of adults in the United States used the internet to get information about the 2010 midterm elections and about specific candidates. 
-
-Internet channels such as YouTube were used by candidates to share speeches and ads for free. This also served as a forum for users to attack other candidates by uploading videos of gaffes.[1]
+In 2008, the internet became a grassroots and a voice of the people tool. Internet channels such as YouTube were used by candidates to share speeches and ads for free. This also served as a forum for users to attack other candidates by uploading videos of gaffes.[1]
 
 A study done by the Pew Internet & American Life Project in conjunction with Princeton Survey Research Associates in November 2010 shows that 54 percent of adults in the United States used the internet to get information about the 2010 midterm elections and about specific candidates. This represents 73 percent of adult internet users. The study also showed that 22 percent of adult internet users used social network sites or Twitter to get information about and discuss the elections and 26 percent of all adults used cell phones to learn about or participate in campaigns.[2]
 
 With huge impact from often biased media, general public is often mislead by the media, and then we start to see suprises after elections.
  
 The presidency of Donald Trump began at noon EST on January 20, 2017, Among the 44 persons who have served as president, only Donald Trump had never held a position in either government or the military prior to taking office.
-instal
+
 In contrast to the 2016 presidential election, where social media was a novelty, the candidates for election in 2020 had carefully managed social media strategies.
 
 
@@ -49,11 +47,11 @@ In contrast to the 2016 presidential election, where social media was a novelty,
 ## Project
 
 
-With the concerns of all those mysterious, when we try to do some research online to understand these candidates policy and who they are, we usually enter a news media website,watch on TV programs, or go on social media like Youtbue to watch all content from candidate, their campaign and their followers, or go on facebook to chat with your friends, or share tweets about this between your network on Twitter... All those learning process gives me some idea: What if peoole has no opinion in the begining and while trying to understand the politics and searching online, they are influenced by all the content they have consume? And if that would ever affect their decision later in the polls? And can we find the connection using statistic model between the media behaviors and polling behavrios to test our hypothesis? 
+With the concerns of all those mysterious, when we try to do some research online to understand these candidates policy and who they are, we usually enter a news media website, watch on TV programs, or go on social media like Youtbue to watch all content from candidates, their campaign and their followers, or go on facebook to chat with your friends, or share tweets about this between your network on Twitter... All those learning processes give me some idea: What if peoole has no opinion in the begining and while trying to understand the politics and searching online, they are influenced by all the content they have consumed? And if that would ever affect their decisions later in the polls? And can we find the connection using statistic model between the media behaviors and polling behavrios to test our hypothesis? 
 
 So we start a study using social media data to analyze current democrat candidates status, and help people to understand the 2020 presidential polls.
 
-We use social media like youtube, twitter, facebook to address the impact of social media in the 2020 United States presidential election.
+We use social website data from youtube, twitter, facebook to address the impact of social media in the 2020 United States presidential election.
 
 
 
