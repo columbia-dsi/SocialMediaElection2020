@@ -1,6 +1,6 @@
 --- 
 title: "Understanding 2020 Presidential Polls from Social Media Perspective"
-author: "Kevin Gao '@hb123boy' ([wg2311](mailto:wg2311@columbia.edu)), Haibo Yu '@haiboyu4' ([hy2628](mailto:hy2628@columbia.edu))"
+author: "Kevin Gao '@kevinleogao' ([wg2311](mailto:wg2311@columbia.edu)), Haibo Yu '@haiboyu4' ([hy2628](mailto:hy2628@columbia.edu))"
 date:  "`r format(Sys.Date(), '%B, %Y')`"
 site: bookdown::bookdown_site
 ---
